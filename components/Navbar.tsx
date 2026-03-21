@@ -1,6 +1,17 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
+  const pathname = usePathname();
+
+  const getLinkClass = (path: string) => {
+    return pathname === path
+      ? "text-orange-500 border-b-2 border-orange-500 pb-1 font-manrope font-semibold tracking-tight text-sm"
+      : "text-zinc-400 hover:text-orange-400 transition-colors duration-300 font-manrope font-semibold tracking-tight text-sm";
+  };
+
   return (
     <nav className="fixed top-0 w-full z-50 bg-[#0e0e0e]/60 backdrop-blur-xl">
       <div className="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto w-full relative">
@@ -8,28 +19,16 @@ export default function Navbar() {
           Thumos Tech
         </Link>
         <div className="hidden md:flex gap-10 items-center">
-          <Link
-            className="text-orange-500 border-b-2 border-orange-500 pb-1 font-manrope font-semibold tracking-tight text-sm"
-            href="/solutions"
-          >
+          <Link className={getLinkClass("/solutions")} href="/solutions">
             Solutions
           </Link>
-          <Link
-            className="text-zinc-400 hover:text-orange-400 transition-colors duration-300 font-manrope font-semibold tracking-tight text-sm"
-            href="#"
-          >
+          <Link className={getLinkClass("/services")} href="/services">
             Services
           </Link>
-          <Link
-            className="text-zinc-400 hover:text-orange-400 transition-colors duration-300 font-manrope font-semibold tracking-tight text-sm"
-            href="/about"
-          >
+          <Link className={getLinkClass("/about")} href="/about">
             About
           </Link>
-          <Link
-            className="text-zinc-400 hover:text-orange-400 transition-colors duration-300 font-manrope font-semibold tracking-tight text-sm"
-            href="#"
-          >
+          <Link className={getLinkClass("/resources")} href="/resources">
             Resources
           </Link>
           <Link

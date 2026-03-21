@@ -12,7 +12,7 @@ export default function Solutions() {
                         Architecting <br /><span className="text-primary">Impenetrable</span> Futures.
                     </h1>
                     <p className="text-lg text-zinc-400 leading-relaxed max-w-xl mb-10 font-light">
-                        Leverage the next generation of security intelligence. Our solutions integrate reactive defense with proactive AI oversight to create a seamless sentinel layer for your enterprise.
+                        Empower your security posture with best in class solutions and services.
                     </p>
                     <div className="flex gap-6">
                         <button className="bg-primary text-black px-8 py-4 font-headline font-bold flex items-center gap-2 hover:bg-orange-400 transition-all active:scale-95">
