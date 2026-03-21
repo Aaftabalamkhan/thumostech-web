@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Contact &amp; Support | Thumos Tech</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "outline": "#45474b",
+              "surface-dim": "#050505",
+              "surface-container-low": "#121212",
+              "on-tertiary-fixed": "#002113",
+              "surface": "#000000",
+              "on-secondary-container": "#402300",
+              "outline-variant": "#2d2d2d",
+              "on-error-container": "#ffdad6",
+              "surface-container-lowest": "#0a0a0a",
+              "tertiary-fixed-dim": "#4edea3",
+              "on-background": "#e2e2e2",
+              "surface-variant": "#1f1f1f",
+              "on-surface-variant": "#a1a1a1",
+              "on-secondary": "#4a2800",
+              "background": "#000000",
+              "primary-container": "#4a2800",
+              "primary": "#FF8C00",
+              "secondary": "#FF8C00",
+              "on-secondary-fixed-variant": "#5e3300",
+              "on-tertiary-container": "#008f62",
+              "surface-tint": "#FF8C00",
+              "inverse-primary": "#FF8C00",
+              "error-container": "#93000a",
+              "surface-container": "#1a1a1a",
+              "primary-fixed-dim": "#FF8C00",
+              "surface-bright": "#252525",
+              "on-error": "#690005",
+              "primary-fixed": "#ffdcb0",
+              "tertiary": "#4edea3",
+              "error": "#ffb4ab",
+              "on-tertiary": "#003824",
+              "on-secondary-fixed": "#2b1700",
+              "inverse-surface": "#e2e2e2",
+              "on-primary": "#000000",
+              "surface-container-high": "#242424",
+              "inverse-on-surface": "#121212",
+              "tertiary-fixed": "#6ffbbe",
+              "secondary-container": "#FF8C00",
+              "on-surface": "#e2e2e2",
+              "secondary-fixed": "#ffdcb0",
+              "on-primary-fixed-variant": "#5e3300",
+              "surface-container-highest": "#2d2d2d",
+              "on-tertiary-fixed-variant": "#005236",
+              "tertiary-container": "#00150b",
+              "secondary-fixed-dim": "#FF8C00",
+              "on-primary-fixed": "#2b1700",
+              "on-primary-container": "#ffdab3"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(10, 10, 10, 0.7);
+            backdrop-filter: blur(40px);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary selection:text-on-primary">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 bg-[#0e0e0e]/60 backdrop-blur-xl">
+<div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto relative">
+<div class="text-2xl font-black text-orange-500 tracking-tighter font-manrope">
+                Thumos Tech
+            </div>
+<div class="hidden md:flex gap-10 items-center">
+<a class="text-zinc-400 font-manrope font-semibold tracking-tight hover:text-orange-400 transition-colors duration-300" href="#">Solutions</a>
+<a class="text-zinc-400 font-manrope font-semibold tracking-tight hover:text-orange-400 transition-colors duration-300" href="#">Services</a>
+<a class="text-zinc-400 font-manrope font-semibold tracking-tight hover:text-orange-400 transition-colors duration-300" href="#">About</a>
+<a class="text-zinc-400 font-manrope font-semibold tracking-tight hover:text-orange-400 transition-colors duration-300" href="#">Resources</a>
+<a class="text-orange-500 border-b-2 border-orange-500 pb-1 font-manrope font-semibold tracking-tight" href="#">Contact</a>
+</div>
+<button class="bg-orange-500 text-black px-6 py-2.5 rounded font-manrope font-bold text-xs uppercase tracking-widest hover:scale-105 active:scale-95 transition-all duration-300">
+                Get a Quote
+            </button>
+<div class="bg-gradient-to-b from-orange-500/10 to-transparent h-[2px] w-full absolute bottom-0 left-0"></div>
+</div>
+</nav>
+<main class="pt-32 pb-20">
+<!-- Hero Section -->
+<section class="max-w-7xl mx-auto px-8 mb-20">
+<div class="max-w-3xl">
+<p class="text-primary font-label font-bold tracking-[0.2rem] uppercase text-xs mb-4">Connect with the Sentinel</p>
+<h1 class="font-headline text-5xl md:text-7xl font-extrabold text-on-surface tracking-tight leading-tight mb-6 uppercase">
+                    Operational <span class="text-primary">Support</span> &amp; Strategic Inquiry
+                </h1>
+<p class="text-on-surface-variant text-lg leading-relaxed max-w-xl">
+                    Our technical monitoring is active 24/7. Whether you're seeking a security audit or need immediate mission-critical support, our team is standing by.
+                </p>
+</div>
+</section>
+<!-- Main Grid -->
+<section class="max-w-7xl mx-auto px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+<!-- Left Column: Contact Form -->
+<div class="lg:col-span-7 bg-surface-container-low p-10 md:p-14 rounded border-outline-variant/10 border relative overflow-hidden">
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 blur-[100px] -z-10 rounded-full"></div>
+<h2 class="font-headline text-3xl font-bold mb-8 uppercase tracking-tighter">Secure Inquiry Form</h2>
+<form class="space-y-8">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="space-y-2">
+<label class="block text-xs font-bold uppercase tracking-widest text-primary/80 ml-1">Full Name</label>
+<input class="w-full bg-surface-container-lowest border-none border-b-2 border-outline-variant/30 focus:border-primary focus:ring-0 text-on-surface p-4 rounded transition-all" placeholder="John Sentinel" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="block text-xs font-bold uppercase tracking-widest text-primary/80 ml-1">Company</label>
+<input class="w-full bg-surface-container-lowest border-none border-b-2 border-outline-variant/30 focus:border-primary focus:ring-0 text-on-surface p-4 rounded transition-all" placeholder="Cyberdyne Systems" type="text"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="block text-xs font-bold uppercase tracking-widest text-primary/80 ml-1">Service Type</label>
+<select class="w-full bg-surface-container-lowest border-none border-b-2 border-outline-variant/30 focus:border-primary focus:ring-0 text-on-surface p-4 rounded appearance-none transition-all">
+<option>Sentinel Overlay Implementation</option>
+<option>Cloud Security Audit</option>
+<option>24/7 Threat Monitoring</option>
+<option>Enterprise Data Encryption</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="block text-xs font-bold uppercase tracking-widest text-primary/80 ml-1">Transmission Message</label>
+<textarea class="w-full bg-surface-container-lowest border-none border-b-2 border-outline-variant/30 focus:border-primary focus:ring-0 text-on-surface p-4 rounded transition-all resize-none" placeholder="Describe your technical requirements..." rows="5"></textarea>
+</div>
+<button class="w-full bg-primary text-on-primary font-headline font-bold py-5 rounded uppercase tracking-widest hover:shadow-[0_0_30px_rgba(255,140,0,0.3)] transition-all duration-300 flex items-center justify-center gap-3 group" type="submit">
+                        Send Secure Transmission
+                        <span class="material-symbols-outlined text-xl group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</form>
+</div>
+<!-- Right Column: Details & Portal -->
+<div class="lg:col-span-5 space-y-12">
+<!-- Support Portal Card -->
+<div class="bg-gradient-to-br from-surface-variant to-surface-container-high p-8 rounded border border-primary/20">
+<div class="flex items-center gap-4 mb-6">
+<div class="w-12 h-12 rounded bg-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-weight="fill">shield_person</span>
+</div>
+<div>
+<h3 class="font-headline text-xl font-bold uppercase tracking-tight">Existing Clients</h3>
+<p class="text-sm text-on-surface/60">Access your secure dashboard</p>
+</div>
+</div>
+<p class="text-on-surface/80 text-sm mb-6 leading-relaxed">
+                        For immediate technical assistance or to review active monitoring nodes, please log in to the Sentinel Support Portal.
+                    </p>
+<a class="inline-flex items-center gap-2 text-primary font-bold text-sm uppercase tracking-widest hover:gap-4 transition-all" href="#">
+                        Support Portal Access <span class="material-symbols-outlined text-lg">login</span>
+</a>
+</div>
+<!-- Contact Info -->
+<div class="space-y-8 px-2">
+<div class="flex items-start gap-6">
+<span class="material-symbols-outlined text-primary text-2xl mt-1">alternate_email</span>
+<div>
+<h4 class="text-xs font-bold uppercase tracking-[0.2rem] text-outline mb-1">Direct Communication</h4>
+<p class="text-xl font-medium">ops@thumos.tech</p>
+</div>
+</div>
+<div class="flex items-start gap-6">
+<span class="material-symbols-outlined text-primary text-2xl mt-1">call</span>
+<div>
+<h4 class="text-xs font-bold uppercase tracking-[0.2rem] text-outline mb-1">Secure Line</h4>
+<p class="text-xl font-medium">+1 (800) SENTINEL</p>
+</div>
+</div>
+<div class="flex items-start gap-6">
+<span class="material-symbols-outlined text-primary text-2xl mt-1">location_on</span>
+<div>
+<h4 class="text-xs font-bold uppercase tracking-[0.2rem] text-outline mb-1">HQ Command Center</h4>
+<p class="text-xl font-medium leading-relaxed">
+                                404 Cipher Street, Silicon Nexus,<br/>
+                                San Francisco, CA 94105
+                            </p>
+</div>
+</div>
+</div>
+<!-- Live Monitoring Badge -->
+<div class="flex items-center gap-3 bg-surface-container-highest/50 py-3 px-4 rounded-full w-fit border border-primary/10">
+<div class="w-2.5 h-2.5 rounded-full bg-primary animate-pulse shadow-[0_0_10px_rgba(255,140,0,0.5)]"></div>
+<span class="text-xs font-bold uppercase tracking-widest text-primary">Live System Monitoring Active</span>
+</div>
+</div>
+</section>
+<!-- Map Section -->
+<section class="max-w-7xl mx-auto px-8 mt-32">
+<div class="relative h-[450px] w-full rounded overflow-hidden border border-outline-variant/10 group">
+<img class="w-full h-full object-cover grayscale brightness-50 contrast-150 opacity-30 group-hover:scale-105 transition-transform duration-[2000ms]" data-alt="Modern dark abstract map of San Francisco area" data-location="San Francisco" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBa112T1-L7SHargkG9PPrvIOHNNiBUvLnNLZNy-f5C1rU9OjBlWG7Lcg2cLldKyEBwD0xPX21MW5Gqt2CkB6azX68axLFe8tp6t-NJV7vIBFMHmM62yt4khGISWH48qhoIv1SlVYhewkGQl3s7hKJLyWVyEpVuWhXBz2GrQ__PgeEpnxKaVDpvCPXOHc5TB5_6D3zTQ0qeFvhr54kpbqvb21DttBqxAnnLijWuoTwuG2x7j3q4Szmhlbp7PC-Sta6By_qbtJ466MI"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent"></div>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center pointer-events-none">
+<div class="relative inline-block">
+<div class="absolute inset-0 bg-primary/30 blur-2xl rounded-full scale-150"></div>
+<div class="relative w-16 h-16 rounded-full bg-primary flex items-center justify-center text-on-primary shadow-2xl">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">my_location</span>
+</div>
+</div>
+<div class="mt-4 bg-surface-container-high/90 backdrop-blur-md px-6 py-3 rounded inline-block border border-primary/20">
+<p class="font-headline font-bold text-sm tracking-widest uppercase">Thumos HQ Established</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full border-t border-zinc-800 bg-black">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 px-8 py-16 max-w-7xl mx-auto">
+<div class="md:col-span-1">
+<div class="text-lg font-bold text-orange-500 mb-6 font-manrope">Thumos Tech</div>
+<p class="font-manrope text-sm tracking-widest uppercase text-zinc-500 leading-relaxed mb-8">
+                    Architecting high-frequency security overlays for the world's most critical data structures.
+                </p>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-orange-500 cursor-pointer hover:scale-110 transition-all">terminal</span>
+<span class="material-symbols-outlined text-orange-500 cursor-pointer hover:scale-110 transition-all">hub</span>
+<span class="material-symbols-outlined text-orange-500 cursor-pointer hover:scale-110 transition-all">lan</span>
+</div>
+</div>
+<div>
+<h4 class="text-orange-500 font-manrope text-sm tracking-widest uppercase mb-6">Operations</h4>
+<ul class="space-y-4">
+<li><a class="font-manrope text-sm text-zinc-500 tracking-widest uppercase hover:text-orange-400 underline underline-offset-4 transition-opacity opacity-80 hover:opacity-100 block" href="#">Solutions</a></li>
+<li><a class="font-manrope text-sm text-zinc-500 tracking-widest uppercase hover:text-orange-400 underline underline-offset-4 transition-opacity opacity-80 hover:opacity-100 block" href="#">Pricing Models</a></li>
+<li><a class="font-manrope text-sm text-zinc-500 tracking-widest uppercase hover:text-orange-400 underline underline-offset-4 transition-opacity opacity-80 hover:opacity-100 block" href="#">Whitepaper</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-orange-500 font-manrope text-sm tracking-widest uppercase mb-6">Company</h4>
+<ul class="space-y-4">
+<li><a class="font-manrope text-sm text-zinc-500 tracking-widest uppercase hover:text-orange-400 underline underline-offset-4 transition-opacity opacity-80 hover:opacity-100 block" href="#">About</a></li>
+<li><a class="font-manrope text-sm text-zinc-500 tracking-widest uppercase hover:text-orange-400 underline underline-offset-4 transition-opacity opacity-80 hover:opacity-100 block" href="#">Privacy Policy</a></li>
+<li><a class="font-manrope text-sm text-zinc-500 tracking-widest uppercase hover:text-orange-400 underline underline-offset-4 transition-opacity opacity-80 hover:opacity-100 block" href="#">Security Audit</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-orange-500 font-manrope text-sm tracking-widest uppercase mb-6">Contact</h4>
+<ul class="space-y-4">
+<li class="font-manrope text-sm text-primary tracking-widest uppercase">Status: All Systems Operational</li>
+<li><a class="font-manrope text-sm text-zinc-500 tracking-widest uppercase hover:text-orange-400 underline underline-offset-4 transition-opacity opacity-80 hover:opacity-100 block" href="#">Support Ticketing</a></li>
+<li><a class="font-manrope text-sm text-zinc-500 tracking-widest uppercase hover:text-orange-400 underline underline-offset-4 transition-opacity opacity-80 hover:opacity-100 block" href="#">Global Offices</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-7xl mx-auto w-full py-8 border-t border-zinc-900 px-8">
+<p class="font-manrope text-sm tracking-widest uppercase text-zinc-600 text-center">© 2024 Thumos Tech. Kinetic Monolith Security.</p>
+</div>
+</footer>
+</body></html>
