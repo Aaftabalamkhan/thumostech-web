@@ -84,7 +84,7 @@ export default function Home() {
                 Best in Class Security Services Activated
               </span>
             </div>
-            <div className="hero-punchline-wrap hero-reveal hero-reveal-delay-1 px-2">
+            <div className="hero-punchline-wrap hero-reveal hero-reveal-delay-1 px-2 mb-4 md:mb-6">
               <h1 className="hero-punchline text-[2.85rem] leading-[0.9] sm:text-[4.25rem] md:text-[5.75rem] lg:text-[6.6rem] font-black uppercase tracking-[-0.06em]">
                 #1 cybersecurity partner
               </h1>
