@@ -140,7 +140,7 @@ export default function Home() {
 
       <section id="book-demo" className="relative py-32">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
-          <BookDemoForm />
+          <BookDemoForm className="bg-zinc-900/90" />
         </div>
       </section>
 

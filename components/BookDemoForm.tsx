@@ -2,7 +2,11 @@
 
 import { useState } from "react";
 
-export default function BookDemoForm() {
+type BookDemoFormProps = {
+  className?: string;
+};
+
+export default function BookDemoForm({ className = "bg-surface-container-low" }: BookDemoFormProps) {
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -12,10 +16,16 @@ export default function BookDemoForm() {
   };
 
   return (
-    <div className="bg-surface-container-low p-10 md:p-14 rounded border border-outline-variant/10 relative overflow-hidden">
-      <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 blur-[100px] -z-10 rounded-full"></div>
+    <div
+      className={`${className} relative overflow-hidden rounded-[2rem] border border-white/8 p-10 shadow-[0_24px_90px_rgba(0,0,0,0.22)] md:p-14`}
+    >
+      <div className="pointer-events-none absolute inset-0 rounded-[2rem] bg-[radial-gradient(circle_at_top_right,rgba(232,84,42,0.14),transparent_34%),radial-gradient(circle_at_bottom_left,rgba(242,122,80,0.08),transparent_36%)]"></div>
+      <div className="pointer-events-none absolute inset-px rounded-[calc(2rem-1px)] bg-gradient-to-b from-white/4 via-transparent to-black/10"></div>
+      <div className="pointer-events-none absolute inset-x-10 top-0 h-20 bg-gradient-to-b from-white/6 to-transparent blur-2xl"></div>
+      <div className="pointer-events-none absolute inset-x-12 bottom-0 h-24 bg-gradient-to-t from-black/18 to-transparent blur-2xl"></div>
+      <div className="absolute top-0 right-0 h-64 w-64 rounded-full bg-primary/6 blur-[100px]"></div>
 
-      <div className="flex flex-col lg:flex-row gap-16">
+      <div className="relative z-10 flex flex-col gap-16 lg:flex-row">
         {/* Left: Info */}
         <div className="lg:w-2/5 space-y-6">
           <span className="font-label uppercase tracking-[0.2rem] text-xs font-bold text-primary">
