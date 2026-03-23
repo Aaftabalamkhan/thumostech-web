@@ -18,8 +18,13 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Thumos Tech | Kinetic Monolith Security",
+  title: "Thumos Tech | Let's Connect",
   description: "Next-Gen Security for a Kinetic World",
+  icons: {
+    icon: "/logo.png",
+    shortcut: "/logo.png",
+    apple: "/logo.png",
+  },
 };
 
 export default function RootLayout({

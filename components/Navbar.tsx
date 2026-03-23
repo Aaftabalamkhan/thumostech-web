@@ -16,24 +16,32 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="fixed top-0 w-full z-50 bg-[#0e0e0e]/60 backdrop-blur-xl">
-      <div className="flex justify-between items-center px-4 md:px-8 py-3 max-w-7xl mx-auto w-full relative">
-        <Link href="/" className="flex items-center">
+    <nav className="fixed top-0 w-full z-50 bg-[#181818]/60 backdrop-blur-xl">
+      <div className="flex justify-between items-center px-4 md:px-8 py-2.5 max-w-7xl mx-auto w-full relative">
+        <Link href="/" className="flex shrink-0 items-center overflow-visible">
           <Image
             src="/logo.png"
             alt="Thumos Tech"
             width={940}
             height={840}
-            className="h-28 md:h-25 w-auto"
+            className="h-32 md:h-28 w-auto -my-3"
             priority
           />
         </Link>
-        <div className="hidden md:flex gap-10 items-center">
-          <Link className={getLinkClass("/solutions", true)} href="/solutions">
-            Solutions
-          </Link>
-          <Link className={getLinkClass("/about", true)} href="/about">
-            About
+        <div className="hidden md:flex items-center gap-6">
+          <div className="flex gap-10 items-center">
+            <Link className={`${getLinkClass("/solutions", true)} text-base`} href="/solutions">
+              Solutions
+            </Link>
+            <Link className={`${getLinkClass("/about", true)} text-base`} href="/about">
+              About
+            </Link>
+          </div>
+          <Link
+            href="/book-demo"
+            className="bg-primary text-black px-6 py-3 rounded font-headline font-bold text-sm tracking-[0.16rem] uppercase hover:bg-secondary transition-all active:scale-95"
+          >
+            Book Demo
           </Link>
         </div>
         <div className="md:hidden">
@@ -55,6 +63,13 @@ export default function Navbar() {
             </Link>
             <Link className={getLinkClass("/about")} href="/about" onClick={() => setIsMobileMenuOpen(false)}>
               About
+            </Link>
+            <Link
+              className="bg-primary text-black px-6 py-3 rounded font-headline font-bold text-sm tracking-[0.16rem] uppercase hover:bg-secondary transition-all"
+              href="/book-demo"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Book Demo
             </Link>
           </div>
         </div>

@@ -42,3 +42,7 @@ next-env.d.ts
 
 .vercel
 .vscode/
+
+# local agent instruction files
+AGENTS.md
+CLAUDE.md
