@@ -116,7 +116,7 @@ export default function Home() {
       </header>
 
       {/* ─── Services Carousel ─── */}
-      <section id="services" className="relative -mt-23 pt-23 pb-29">
+      <section id="services" className="relative -mt-23 pt-23 pb-33">
         <div className="pointer-events-none absolute inset-x-[-10%] top-[-7rem] h-72 bg-[radial-gradient(ellipse_at_center,rgba(232,84,42,0.1),rgba(0,0,0,0.06)_46%,transparent_78%)] blur-3xl"></div>
         <div className="pointer-events-none absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-black/10 via-black/6 to-transparent"></div>
         <div className="max-w-7xl mx-auto px-4 md:px-8">
