@@ -76,7 +76,7 @@ export default function Home() {
                 priority
               />
             </div>
-            <p className="text-on-surface-variant text-xl md:text-2xl max-w-xl leading-relaxed hero-reveal hero-reveal-delay-2">
+            <p className="text-white text-[1.15rem] md:text-[1.4rem] max-w-xl leading-relaxed hero-reveal hero-reveal-delay-2">
               From Exposed to Unbreakable
               <br />
               Cybersecurity Services for Modern Enterprises.
