@@ -17,14 +17,14 @@ export default function Navbar() {
 
   return (
     <nav className="fixed top-0 w-full z-50 bg-[#181818]/57 backdrop-blur-xl">
-      <div className="flex justify-between items-center px-6 md:px-12 py-0.5 max-w-7xl mx-auto w-full relative">
-        <Link href="/" className="ml-2 md:ml-3 flex shrink-0 items-center overflow-visible">
+      <div className="flex justify-between items-center px-7 md:px-14 py-0 max-w-7xl mx-auto w-full relative">
+        <Link href="/" className="ml-3 md:ml-4 flex shrink-0 items-center overflow-visible">
           <Image
             src="/logo.png"
             alt="Thumos Tech"
             width={940}
             height={840}
-            className="h-32 md:h-28 w-auto -my-3"
+            className="h-[6.75rem] md:h-[5.75rem] w-auto -my-2"
             priority
           />
         </Link>
@@ -39,7 +39,7 @@ export default function Navbar() {
           </div>
           <Link
             href="/book-demo"
-            className="mr-2 md:mr-3 bg-primary text-black px-6 py-3 rounded font-headline font-bold text-sm tracking-[0.16rem] uppercase hover:bg-secondary transition-all active:scale-95"
+            className="mr-3 md:mr-4 bg-primary text-black px-6 py-[0.45rem] rounded font-headline font-bold text-sm tracking-[0.16rem] uppercase hover:bg-secondary transition-all active:scale-95"
           >
             Book Demo
           </Link>
