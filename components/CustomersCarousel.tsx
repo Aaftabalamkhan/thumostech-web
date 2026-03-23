@@ -18,7 +18,7 @@ export default function CustomersCarousel() {
       <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none"></div>
 
       {/* Marquee track */}
-      <div className="flex marquee-track">
+      <div className="flex marquee-track marquee-track-fast md:marquee-track">
         {[...customers, ...customers].map((name, i) => (
           <div
             key={i}

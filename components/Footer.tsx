@@ -1,4 +1,5 @@
 import Link from "next/link";
+import SocialLinks from "@/components/SocialLinks";
 
 export default function Footer() {
   return (
@@ -12,17 +13,7 @@ export default function Footer() {
             Defending the digital frontier with unyielding precision. Our mission is to ensure your data remains
             your most secure asset.
           </p>
-          <div className="flex gap-4">
-            <span className="material-symbols-outlined text-primary cursor-pointer hover:opacity-100 opacity-80 transition-opacity">
-              public
-            </span>
-            <span className="material-symbols-outlined text-primary cursor-pointer hover:opacity-100 opacity-80 transition-opacity">
-              terminal
-            </span>
-            <span className="material-symbols-outlined text-primary cursor-pointer hover:opacity-100 opacity-80 transition-opacity">
-              shield
-            </span>
-          </div>
+          <SocialLinks compact />
         </div>
         <div className="space-y-6">
           <h4 className="font-headline text-sm font-bold uppercase tracking-widest text-primary">

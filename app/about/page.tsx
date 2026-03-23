@@ -1,4 +1,5 @@
 import Image from "next/image";
+import SocialLinks from "@/components/SocialLinks";
 
 export default function About() {
   return (
@@ -27,6 +28,25 @@ export default function About() {
               <span className="font-headline font-bold text-2xl">99.9%</span>
             </div>
             <p className="text-xs font-label uppercase tracking-widest opacity-60">Threat Neutralization</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="max-w-7xl mx-auto px-4 md:px-8 pb-8 -mt-6">
+        <div className="rounded-[1.5rem] border border-primary/25 bg-[linear-gradient(135deg,rgba(232,84,42,0.1),rgba(255,255,255,0.02))] p-8 md:p-10">
+          <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+            <div className="max-w-2xl space-y-3">
+              <p className="text-xs font-bold uppercase tracking-[0.22rem] text-primary">Connect With Thumos</p>
+              <h2 className="font-headline text-3xl md:text-4xl font-extrabold">
+                Reach the team through the channels your buyers and partners already use.
+              </h2>
+              <p className="text-zinc-400 leading-relaxed">
+                Follow company updates on LinkedIn, send us an email, or start a WhatsApp conversation for a faster first touchpoint.
+              </p>
+            </div>
+            <div className="md:min-w-[26rem]">
+              <SocialLinks layout="grid" />
+            </div>
           </div>
         </div>
       </section>

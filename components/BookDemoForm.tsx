@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import SocialLinks from "@/components/SocialLinks";
 
 type BookDemoFormProps = {
   className?: string;
@@ -8,11 +9,41 @@ type BookDemoFormProps = {
 
 export default function BookDemoForm({ className = "bg-surface-container-low" }: BookDemoFormProps) {
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 4000);
+    setErrorMessage("");
+    setIsSubmitting(true);
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch("/api/book-demo", {
+        method: "POST",
+        body: formData,
+      });
+
+      const payload = (await response.json()) as { error?: string };
+
+      if (!response.ok) {
+        throw new Error(payload.error || "We could not send your request right now.");
+      }
+
+      setSubmitted(true);
+      form.reset();
+      window.setTimeout(() => setSubmitted(false), 5000);
+    } catch (error) {
+      setErrorMessage(
+        error instanceof Error
+          ? error.message
+          : "We could not send your request right now. Please try again shortly."
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -52,6 +83,12 @@ export default function BookDemoForm({ className = "bg-surface-container-low" }:
               Expert-led walkthrough
             </div>
           </div>
+          <div className="space-y-3 pt-4">
+            <p className="text-xs font-bold uppercase tracking-[0.2rem] text-primary/85">
+              Connect With Us
+            </p>
+            <SocialLinks layout="grid" compact />
+          </div>
         </div>
 
         {/* Right: Form */}
@@ -74,7 +111,8 @@ export default function BookDemoForm({ className = "bg-surface-container-low" }:
                     Full Name
                   </label>
                   <input
-                    className="w-full bg-surface-container-lowest border border-outline-variant/30 focus:border-primary focus:ring-1 focus:ring-primary/30 text-on-surface p-4 rounded transition-all outline-none"
+                    name="fullName"
+                    className="w-full bg-surface-container-lowest border border-white/14 focus:border-primary focus:ring-1 focus:ring-primary/30 text-on-surface p-4 rounded transition-all outline-none"
                     placeholder="John Doe"
                     type="text"
                     required
@@ -85,7 +123,8 @@ export default function BookDemoForm({ className = "bg-surface-container-low" }:
                     Email
                   </label>
                   <input
-                    className="w-full bg-surface-container-lowest border border-outline-variant/30 focus:border-primary focus:ring-1 focus:ring-primary/30 text-on-surface p-4 rounded transition-all outline-none"
+                    name="email"
+                    className="w-full bg-surface-container-lowest border border-white/14 focus:border-primary focus:ring-1 focus:ring-primary/30 text-on-surface p-4 rounded transition-all outline-none"
                     placeholder="john@company.com"
                     type="email"
                     required
@@ -98,7 +137,8 @@ export default function BookDemoForm({ className = "bg-surface-container-low" }:
                     Company
                   </label>
                   <input
-                    className="w-full bg-surface-container-lowest border border-outline-variant/30 focus:border-primary focus:ring-1 focus:ring-primary/30 text-on-surface p-4 rounded transition-all outline-none"
+                    name="company"
+                    className="w-full bg-surface-container-lowest border border-white/14 focus:border-primary focus:ring-1 focus:ring-primary/30 text-on-surface p-4 rounded transition-all outline-none"
                     placeholder="Acme Corp"
                     type="text"
                     required
@@ -109,7 +149,8 @@ export default function BookDemoForm({ className = "bg-surface-container-low" }:
                     Phone
                   </label>
                   <input
-                    className="w-full bg-surface-container-lowest border border-outline-variant/30 focus:border-primary focus:ring-1 focus:ring-primary/30 text-on-surface p-4 rounded transition-all outline-none"
+                    name="phone"
+                    className="w-full bg-surface-container-lowest border border-white/14 focus:border-primary focus:ring-1 focus:ring-primary/30 text-on-surface p-4 rounded transition-all outline-none"
                     placeholder="+1 (555) 000-0000"
                     type="tel"
                   />
@@ -120,18 +161,25 @@ export default function BookDemoForm({ className = "bg-surface-container-low" }:
                   Message
                 </label>
                 <textarea
-                  className="w-full bg-surface-container-lowest border border-outline-variant/30 focus:border-primary focus:ring-1 focus:ring-primary/30 text-on-surface p-4 rounded transition-all resize-none outline-none"
+                  name="message"
+                  className="w-full bg-surface-container-lowest border border-white/14 focus:border-primary focus:ring-1 focus:ring-primary/30 text-on-surface p-4 rounded transition-all resize-none outline-none"
                   placeholder="Tell us about your security needs..."
                   rows={4}
                 ></textarea>
               </div>
+              {errorMessage ? (
+                <p className="rounded border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm text-red-200">
+                  {errorMessage}
+                </p>
+              ) : null}
               <button
-                className="w-full bg-primary text-on-primary font-headline font-bold py-4 rounded uppercase tracking-widest hover:shadow-[0_0_30px_rgba(255,140,0,0.3)] transition-all duration-300 flex items-center justify-center gap-3 group"
+                className="w-full bg-primary text-on-primary font-headline font-bold py-4 rounded uppercase tracking-widest hover:shadow-[0_0_30px_rgba(255,140,0,0.3)] transition-all duration-300 flex items-center justify-center gap-3 group disabled:opacity-70 disabled:cursor-not-allowed"
                 type="submit"
+                disabled={isSubmitting}
               >
-                Request Demo
+                {isSubmitting ? "Sending Request" : "Request Demo"}
                 <span className="material-symbols-outlined text-xl group-hover:translate-x-1 transition-transform">
-                  arrow_forward
+                  {isSubmitting ? "progress_activity" : "arrow_forward"}
                 </span>
               </button>
             </form>

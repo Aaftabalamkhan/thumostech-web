@@ -9,6 +9,17 @@ export default function Navbar() {
   const pathname = usePathname();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+  const handleLogoClick = () => {
+    setIsMobileMenuOpen(false);
+
+    if (pathname === "/") {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }
+  };
+
   const getLinkClass = (path: string, accent = false) => {
     return pathname === path
       ? "text-primary border-b-2 border-primary pb-1 font-manrope font-semibold tracking-tight text-sm"
@@ -17,37 +28,44 @@ export default function Navbar() {
 
   return (
     <nav className="fixed top-0 w-full z-50 bg-[#181818]/57 backdrop-blur-xl">
-      <div className="flex justify-between items-center px-7 md:px-14 py-0 max-w-7xl mx-auto w-full relative">
-        <Link href="/" className="ml-3 md:ml-4 flex shrink-0 items-center overflow-visible">
+      <div className="flex justify-between items-center px-3 md:px-10 py-0 max-w-7xl mx-auto w-full min-h-[2.05rem] md:min-h-[2.35rem] relative">
+        <Link href="/" onClick={handleLogoClick} className="-ml-1 md:-ml-2 flex shrink-0 items-center overflow-visible">
           <Image
             src="/logo.png"
             alt="Thumos Tech"
             width={940}
             height={840}
-            className="h-[6.75rem] md:h-[5.75rem] w-auto -my-2"
+            className="h-[10.2rem] md:h-[8.7rem] w-auto min-w-[13rem] md:min-w-[15.5rem] -my-7 md:-my-6"
             priority
           />
         </Link>
         <div className="hidden md:flex items-center gap-6">
           <div className="flex gap-10 items-center">
-            <Link className={`${getLinkClass("/solutions", true)} text-base`} href="/solutions">
+            <Link className={`${getLinkClass("/solutions", true)} text-[1.05rem]`} href="/solutions">
               Solutions
             </Link>
-            <Link className={`${getLinkClass("/about", true)} text-base`} href="/about">
+            <Link className={`${getLinkClass("/about", true)} text-[1.05rem]`} href="/about">
               About
             </Link>
           </div>
           <Link
             href="/book-demo"
-            className="mr-3 md:mr-4 bg-primary text-black px-6 py-[0.45rem] rounded font-headline font-bold text-sm tracking-[0.16rem] uppercase hover:bg-secondary transition-all active:scale-95"
+            className="mr-2 md:mr-3 bg-primary text-black px-6 py-[0.45rem] rounded font-headline font-bold text-sm tracking-[0.16rem] uppercase hover:bg-secondary transition-all active:scale-95"
           >
             Book Demo
           </Link>
         </div>
-        <div className="md:hidden">
+        <div className="md:hidden flex items-center gap-3">
+          <Link
+            href="/book-demo"
+            className="bg-primary text-black px-4 py-2 rounded font-headline font-bold text-[0.68rem] tracking-[0.14rem] uppercase hover:bg-secondary transition-all active:scale-95"
+          >
+            Book Demo
+          </Link>
           <button
-            className="material-symbols-outlined text-primary hover:text-primary/80 focus:outline-none"
+            className="material-symbols-outlined text-primary hover:text-primary/80 focus:outline-none text-[1.9rem] leading-none"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
           >
             {isMobileMenuOpen ? 'close' : 'menu'}
           </button>
@@ -63,13 +81,6 @@ export default function Navbar() {
             </Link>
             <Link className={getLinkClass("/about")} href="/about" onClick={() => setIsMobileMenuOpen(false)}>
               About
-            </Link>
-            <Link
-              className="bg-primary text-black px-6 py-3 rounded font-headline font-bold text-sm tracking-[0.16rem] uppercase hover:bg-secondary transition-all"
-              href="/book-demo"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              Book Demo
             </Link>
           </div>
         </div>

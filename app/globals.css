@@ -139,6 +139,10 @@ html {
   animation: marquee 30s linear infinite;
 }
 
+.marquee-track-fast {
+  animation-duration: 16s;
+}
+
 .marquee-track:hover {
   animation-play-state: paused;
 }
@@ -155,7 +159,7 @@ html {
 
 .animate-ribbon {
   stroke-dasharray: 260 500;
-  animation: ribbon-pan 13s linear infinite;
+  animation: ribbon-pan 10.5s linear infinite;
   will-change: stroke-dashoffset;
   filter: drop-shadow(0 0 14px rgba(232, 84, 42, 0.45));
 }
@@ -252,30 +256,40 @@ html {
   will-change: background-position;
 }
 
-.hero-logo-frame {
+.hero-punchline-wrap {
   position: relative;
   isolation: isolate;
 }
 
-.hero-logo-frame::before {
+.hero-punchline-wrap::before {
   content: "";
   position: absolute;
-  inset: 0;
-  background: transparent;
+  inset: 10% -4%;
+  background:
+    radial-gradient(circle at center, rgba(232, 84, 42, 0.26), transparent 58%);
+  filter: blur(48px);
   z-index: -1;
 }
 
-.hero-logo-frame::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: transparent;
-  z-index: -1;
+.hero-punchline {
+  color: transparent;
+  background-image:
+    linear-gradient(140deg, #fff2ec 0%, #ffb08e 24%, #f27a50 56%, #e8542a 82%, #ffcab3 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  text-shadow: 0 14px 44px rgba(232, 84, 42, 0.14);
 }
 
-.hero-logo-image {
-  filter:
-    drop-shadow(0 10px 24px rgba(0, 0, 0, 0.34));
+@media (max-width: 767px) {
+  .animate-ribbon {
+    stroke-dasharray: 180 360;
+    animation-duration: 8.5s;
+    filter: drop-shadow(0 0 10px rgba(232, 84, 42, 0.42));
+  }
+
+  .bg-grid-pattern {
+    background-size: 38px 38px;
+  }
 }
 
 @keyframes hero-reveal {

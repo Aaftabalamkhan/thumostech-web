@@ -4,38 +4,38 @@ import { useEffect, useMemo, useRef, useState } from "react";
 
 const services = [
   {
-    icon: "security",
-    title: "Professional Services",
+    icon: "shield_person",
+    title: "Professional Security Services",
     description:
-      "A professional service is an intangible product that a contractor or product vendor sells to help a customer manage a specific part of their business.",
-    features: ["Security Architecture Advisory", "Implementation & Integration"],
+      "Security programs designed with the right architecture, controls, and rollout sequencing for enterprise environments under real operational pressure.",
+    features: ["Security Architecture Advisory", "Implementation and Integration"],
   },
   {
-    icon: "psychology",
+    icon: "school",
     title: "Training Delivery",
     description:
-      "Technical Training teaches the skills needed to design, develop, implement, maintain, support or operate a particular technology or related application.",
+      "Practical enablement that helps internal teams, administrators, and security stakeholders operate modern tooling with confidence.",
     features: ["Vendor Certification Programs", "Hands-On Security Workshops"],
   },
   {
-    icon: "cloud_done",
+    icon: "fact_check",
     title: "Security Audits",
     description:
-      "A security audit is the high-level description of the many ways organizations can test and assess their overall security posture, including cybersecurity.",
+      "Structured assessments to evaluate posture, identify control gaps, and prepare teams for remediation, compliance, and executive review.",
     features: ["Vulnerability & Gap Assessment", "Compliance Readiness Reviews"],
   },
   {
-    icon: "bug_report",
+    icon: "support_agent",
     title: "24x7 AMC",
     description:
-      "AMC stands for Annual Maintenance Contract. Most of the service based industries like Machnical/Electronic/Electrical/Software/Automobile etc.",
+      "Always-on maintenance and operational support to keep critical security platforms healthy, tuned, and available around the clock.",
     features: ["Preventive Health Checks", "Issue Resolution & Support"],
   },
   {
-    icon: "policy",
-    title: "APP/WEB Development",
+    icon: "code_blocks",
+    title: "Secure App and Web Development",
     description:
-      "Web app development empowers web-based projects to perform and act similarly to a mobile app.",
+      "Application delivery with secure engineering practices built in from day one, reducing risk across the full development lifecycle.",
     features: ["Secure SDLC Practices", "Application Hardening"],
   },
   {
@@ -47,21 +47,17 @@ const services = [
   },
 ];
 
-const CLONE_COUNT = 3;
+const LOOP_CLONE_COUNT = 3;
 
 export default function ServicesCarousel() {
-  const trackRef = useRef<HTMLDivElement>(null);
+  const [isPaused, setIsPaused] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
   const [cardStep, setCardStep] = useState(0);
-  const [currentIndex, setCurrentIndex] = useState(CLONE_COUNT);
   const [isTransitionEnabled, setIsTransitionEnabled] = useState(true);
-  const [isAnimating, setIsAnimating] = useState(false);
+  const trackRef = useRef<HTMLDivElement>(null);
 
   const loopedServices = useMemo(
-    () => [
-      ...services.slice(-CLONE_COUNT),
-      ...services,
-      ...services.slice(0, CLONE_COUNT),
-    ],
+    () => [...services, ...services.slice(0, LOOP_CLONE_COUNT)],
     []
   );
 
@@ -79,9 +75,7 @@ export default function ServicesCarousel() {
 
     updateCardStep();
 
-    const resizeObserver = new ResizeObserver(() => {
-      updateCardStep();
-    });
+    const resizeObserver = new ResizeObserver(updateCardStep);
 
     if (trackRef.current) {
       resizeObserver.observe(trackRef.current);
@@ -96,70 +90,70 @@ export default function ServicesCarousel() {
   }, []);
 
   useEffect(() => {
+    if (isPaused || cardStep === 0) return;
+
+    const intervalId = window.setInterval(() => {
+      setCurrentIndex((prevIndex) => prevIndex + 1);
+    }, 2400);
+
+    return () => window.clearInterval(intervalId);
+  }, [isPaused, cardStep]);
+
+  useEffect(() => {
+    if (currentIndex !== services.length) return;
+
+    const timeoutId = window.setTimeout(() => {
+      setIsTransitionEnabled(false);
+      setCurrentIndex(0);
+    }, 640);
+
+    return () => window.clearTimeout(timeoutId);
+  }, [currentIndex]);
+
+  useEffect(() => {
     if (isTransitionEnabled) return;
 
     const frameId = window.requestAnimationFrame(() => {
       setIsTransitionEnabled(true);
     });
 
-    return () => {
-      window.cancelAnimationFrame(frameId);
-    };
+    return () => window.cancelAnimationFrame(frameId);
   }, [isTransitionEnabled]);
 
-  const scroll = (direction: "left" | "right") => {
-    if (isAnimating) return;
-
-    setIsAnimating(true);
+  const goToSlide = (index: number) => {
     setIsTransitionEnabled(true);
-    setCurrentIndex((prevIndex) => prevIndex + (direction === "right" ? 1 : -1));
-  };
-
-  const handleTransitionEnd = () => {
-    if (currentIndex >= services.length + CLONE_COUNT) {
-      setIsTransitionEnabled(false);
-      setCurrentIndex(CLONE_COUNT);
-    } else if (currentIndex < CLONE_COUNT) {
-      setIsTransitionEnabled(false);
-      setCurrentIndex(services.length + currentIndex);
-    }
-
-    setIsAnimating(false);
+    setCurrentIndex(index);
   };
 
   return (
     <div className="relative">
-      <div className="flex gap-3 absolute -top-16 right-0 z-10">
-        <button
-          onClick={() => scroll("left")}
-          className="w-10 h-10 border border-zinc-700 rounded flex items-center justify-center text-zinc-400 hover:border-primary hover:text-primary transition-colors"
-          aria-label="Scroll left"
-        >
-          <span className="material-symbols-outlined text-xl">chevron_left</span>
-        </button>
-        <button
-          onClick={() => scroll("right")}
-          className="w-10 h-10 border border-zinc-700 rounded flex items-center justify-center text-zinc-400 hover:border-primary hover:text-primary transition-colors"
-          aria-label="Scroll right"
-        >
-          <span className="material-symbols-outlined text-xl">chevron_right</span>
-        </button>
+      <div className="mb-8 flex flex-wrap items-center justify-between gap-4">
+        <p className="text-sm text-on-surface-variant">
+          Auto-rotating service highlights. Hover or touch the carousel to pause and explore a card.
+        </p>
       </div>
 
-      <div className="overflow-hidden pb-4">
+      <div
+        className="overflow-hidden pb-4"
+        onMouseEnter={() => setIsPaused(true)}
+        onMouseLeave={() => setIsPaused(false)}
+        onTouchStart={() => setIsPaused(true)}
+        onTouchEnd={() => setIsPaused(false)}
+        onFocusCapture={() => setIsPaused(true)}
+        onBlurCapture={() => setIsPaused(false)}
+      >
         <div
           ref={trackRef}
-          className={`flex gap-6 will-change-transform ${isTransitionEnabled ? "transition-transform duration-500 ease-out" : ""}`}
+          className={`flex gap-6 will-change-transform ${isTransitionEnabled ? "transition-transform duration-700 ease-out" : ""}`}
           style={{
             transform: `translateX(-${currentIndex * cardStep}px)`,
           }}
-          onTransitionEnd={handleTransitionEnd}
         >
           {loopedServices.map((service, index) => (
             <div
               key={`${service.title}-${index}`}
               data-carousel-card
-              className="group relative shrink-0 basis-full md:basis-[calc((100%-1.5rem)/2)] xl:basis-[calc((100%-3rem)/3)] bg-surface-container-low p-8 rounded border border-zinc-900 overflow-hidden transition-all hover:border-primary/40"
+              className="group relative shrink-0 w-[84vw] sm:w-[30rem] lg:w-[25rem] bg-surface-container-low p-8 rounded border border-white/10 overflow-hidden transition-all hover:border-primary/40"
             >
               <div className="relative z-10 flex flex-col h-full">
                 <div className="w-14 h-14 bg-primary/10 rounded flex items-center justify-center text-primary mb-6">
@@ -185,6 +179,22 @@ export default function ServicesCarousel() {
             </div>
           ))}
         </div>
+      </div>
+
+      <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
+        {services.map((service, index) => {
+          const isActive = currentIndex % services.length === index;
+
+          return (
+            <button
+              key={service.title}
+              type="button"
+              onClick={() => goToSlide(index)}
+              className={`h-2.5 rounded-full transition-all ${isActive ? "w-10 bg-primary" : "w-2.5 bg-white/20 hover:bg-white/40"}`}
+              aria-label={`Go to ${service.title}`}
+            />
+          );
+        })}
       </div>
     </div>
   );

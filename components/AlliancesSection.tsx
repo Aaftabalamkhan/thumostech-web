@@ -42,7 +42,7 @@ export default function AlliancesSection() {
               training, and long-term service continuity across the platforms our clients use every day.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 pt-4">
-              <div className="border border-primary/15 bg-primary/5 p-5 rounded">
+              <div className="border border-primary/40 bg-primary/[0.07] p-5 rounded">
                 <p className="font-headline text-3xl font-extrabold text-primary">15+</p>
                 <p className="text-xs uppercase tracking-[0.18rem] text-on-surface/65 font-bold mt-2">
                   Alliance Pillars
@@ -80,18 +80,18 @@ export default function AlliancesSection() {
                       {category.title}
                     </h3>
                   </div>
-                  <ul className="space-y-4">
+                  <ul className="space-y-6">
                     {category.capabilities.map((capability) => (
                       <li
                         key={capability.name}
-                        className="flex min-h-24 w-full items-center gap-1 rounded border border-zinc-800 bg-black/35 px-2 py-5"
+                        className="flex min-h-16 w-full items-center gap-4 py-1"
                       >
                         <div
                           className={`flex h-9 w-10 shrink-0 items-center justify-center rounded border border-white/10 bg-gradient-to-br ${capability.tone} text-[11px] font-black uppercase tracking-[0.16rem] text-white`}
                         >
                           {capability.mark}
                         </div>
-                        <span className="font-headline text-base font-bold tracking-tight text-on-surface">
+                        <span className="font-headline text-lg font-bold tracking-tight text-on-surface">
                           {capability.name}
                         </span>
                       </li>
