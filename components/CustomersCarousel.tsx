@@ -24,7 +24,7 @@ export default function CustomersCarousel() {
             key={i}
             className="shrink-0 px-10 md:px-16 flex items-center"
           >
-            <span className="font-headline font-bold text-xl md:text-2xl tracking-tighter text-on-surface whitespace-nowrap opacity-40 hover:opacity-100 hover:text-primary transition-all duration-300 cursor-default">
+            <span className="font-headline font-bold text-xl md:text-2xl tracking-tighter text-white whitespace-nowrap opacity-40 hover:opacity-100 hover:text-primary transition-all duration-300 cursor-default">
               {name}
             </span>
           </div>
