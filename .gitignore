@@ -41,6 +41,4 @@ yarn-error.log*
 next-env.d.ts
 
 .vercel
-.vscode
-AGENTS.md
-CLAUDE.md
+.vscode/

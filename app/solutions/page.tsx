@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Solutions() {
   return (
     <div className="pt-32">
@@ -15,7 +17,7 @@ export default function Solutions() {
                         Empower your security posture with best in class solutions and services.
                     </p>
                     <div className="flex gap-6">
-                        <button className="bg-primary text-black px-8 py-4 font-headline font-bold flex items-center gap-2 hover:bg-orange-400 transition-all active:scale-95">
+                        <button className="bg-primary text-black px-8 py-4 font-headline font-bold flex items-center gap-2 hover:bg-secondary transition-all active:scale-95">
                             Explore Services
                             <span className="material-symbols-outlined text-lg">arrow_forward</span>
                         </button>
@@ -28,7 +30,7 @@ export default function Solutions() {
                     <div className="aspect-square border border-primary/20 absolute -inset-10 animate-[spin_20s_linear_infinite]"></div>
                     <div className="aspect-square border border-zinc-800 absolute -inset-20 animate-[spin_30s_linear_infinite_reverse]"></div>
                     <div className="relative z-10 aspect-square overflow-hidden bg-zinc-900 border border-zinc-800">
-                        <img alt="Cybersecurity command center" className="w-full h-full object-cover grayscale brightness-75 mix-blend-screen opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8fgbsFkcbH3wJAO2WxsTJBC1i_7WayE-N3xae4o4S9NGMfwG-UST2O6YfAtYJyAupLuVmKcuUPulhdFj5bn5TWz4P4NCoQUatp6iYyo2F4kFdckDmE-Daxr1iqxZzSNSguPsXRy0Az8hbw2lXb3EpS8-AxCMTAmYcl5rUZ3Y8XYcstjszuLkyrFpcjNlyvAG1vn6noNQRqJYnllH8wNk75FjNVqjQRJZoOD2iiRqyTix4FL8Tuw9TmfKfRwfTF58RIwJ3_uLNSLc" />
+                        <Image alt="Cybersecurity command center" className="w-full h-full object-cover grayscale brightness-75 mix-blend-screen opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8fgbsFkcbH3wJAO2WxsTJBC1i_7WayE-N3xae4o4S9NGMfwG-UST2O6YfAtYJyAupLuVmKcuUPulhdFj5bn5TWz4P4NCoQUatp6iYyo2F4kFdckDmE-Daxr1iqxZzSNSguPsXRy0Az8hbw2lXb3EpS8-AxCMTAmYcl5rUZ3Y8XYcstjszuLkyrFpcjNlyvAG1vn6noNQRqJYnllH8wNk75FjNVqjQRJZoOD2iiRqyTix4FL8Tuw9TmfKfRwfTF58RIwJ3_uLNSLc" width={900} height={900} sizes="(min-width: 768px) 32vw, 100vw" />
                     </div>
                 </div>
             </div>
@@ -48,7 +50,7 @@ export default function Solutions() {
                             </div>
                             <h3 className="font-headline text-3xl font-bold mb-4 text-white uppercase tracking-tight">Cybersecurity Services</h3>
                             <p className="text-zinc-400 text-lg leading-relaxed mb-8 max-w-2xl">
-                                Comprehensive perimeter defense and internal hardening. We don't just find vulnerabilities; we eliminate them through rigorous risk assessment and offensive pentesting.
+                                Comprehensive perimeter defense and internal hardening. We don&apos;t just find vulnerabilities; we eliminate them through rigorous risk assessment and offensive pentesting.
                             </p>
                             <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
                                 <li className="flex items-center gap-3 text-sm text-zinc-300">
@@ -73,7 +75,7 @@ export default function Solutions() {
 
                 <div className="md:col-span-4 group h-full">
                     <div className="bg-zinc-900 border border-zinc-800 p-10 hover:border-primary/50 transition-all duration-500 h-full flex flex-col relative overflow-hidden">
-                        <img alt="AI Neural Network" className="absolute inset-0 w-full h-full object-cover opacity-10 grayscale group-hover:scale-110 transition-transform duration-700 pointer-events-none" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5M6qDoSezFqK7fPkqN3MWzbTGJRUwCY7DDDNejFJ185IKI6iQCaNZR9uWgCp2GZCSUcz4cWYGne8SBHX_Yf_QWg8ISrDt8xC5RiCzSbE7KGMur7-nfb_-PlTffwwz0Zh2mfrGah5zs_flj2w9pkHmA5FNse9g6EcFuCbQNxwEnYaf-7KwvDsqvv8nRCaGO_p1EDDeUySPvEO5A-0S4jxZyabllEO5hj5i63w26PIp5TN9D00jfD7RMM0FAUQgTFyZs-SkyW-xKTU" />
+                        <Image alt="AI Neural Network" className="absolute inset-0 w-full h-full object-cover opacity-10 grayscale group-hover:scale-110 transition-transform duration-700 pointer-events-none" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5M6qDoSezFqK7fPkqN3MWzbTGJRUwCY7DDDNejFJ185IKI6iQCaNZR9uWgCp2GZCSUcz4cWYGne8SBHX_Yf_QWg8ISrDt8xC5RiCzSbE7KGMur7-nfb_-PlTffwwz0Zh2mfrGah5zs_flj2w9pkHmA5FNse9g6EcFuCbQNxwEnYaf-7KwvDsqvv8nRCaGO_p1EDDeUySPvEO5A-0S4jxZyabllEO5hj5i63w26PIp5TN9D00jfD7RMM0FAUQgTFyZs-SkyW-xKTU" width={800} height={1000} sizes="(min-width: 768px) 28vw, 100vw" />
                         <div className="relative z-10 h-full flex flex-col justify-between">
                             <div>
                                 <div className="w-14 h-14 bg-zinc-800 border border-zinc-700 flex items-center justify-center mb-10">
@@ -146,7 +148,7 @@ export default function Solutions() {
                         <h2 className="font-headline text-3xl font-bold text-white mb-2 tracking-tight uppercase">Ready to fortify your network?</h2>
                         <p className="text-zinc-400">Request a comprehensive security blueprint for your organization today.</p>
                     </div>
-                    <button className="bg-primary text-black font-headline font-bold px-10 py-4 hover:bg-orange-400 transition-all active:scale-95 whitespace-nowrap">
+                    <button className="bg-primary text-black font-headline font-bold px-10 py-4 hover:bg-secondary transition-all active:scale-95 whitespace-nowrap">
                         Schedule Consultation
                     </button>
                 </div>
