@@ -28,14 +28,14 @@ export default function Navbar() {
 
   return (
     <nav className="fixed top-0 w-full z-50 bg-[#181818]/57 backdrop-blur-xl">
-      <div className="flex justify-between items-center px-1 md:px-10 py-0 max-w-7xl mx-auto w-full min-h-[2.05rem] md:min-h-[2.35rem] relative">
-        <Link href="/" onClick={handleLogoClick} className="-ml-5 md:-ml-2 flex shrink-0 items-center overflow-visible">
+      <div className="flex justify-between items-center pl-0 pr-2 md:px-10 py-0 max-w-7xl mx-auto w-full min-h-[2.05rem] md:min-h-[2.35rem] relative">
+        <Link href="/" onClick={handleLogoClick} className="-ml-7 md:-ml-2 flex shrink-0 items-center overflow-visible">
           <Image
             src="/logo.png"
             alt="Thumos Tech"
             width={940}
             height={840}
-            className="h-[10.2rem] md:h-[8.7rem] w-auto min-w-[13rem] md:min-w-[15.5rem] -my-7 md:-my-6"
+            className="h-[9.1rem] md:h-[8.7rem] w-auto min-w-[11.6rem] md:min-w-[15.5rem] -my-6 md:-my-6"
             priority
           />
         </Link>
@@ -55,15 +55,15 @@ export default function Navbar() {
             Book Demo
           </Link>
         </div>
-        <div className="md:hidden mr-5 flex items-center gap-2">
+        <div className="md:hidden mr-1 flex items-center gap-1.5">
           <Link
             href="/book-demo"
-            className="bg-primary text-black px-4 py-2.5 rounded font-headline font-bold text-[0.68rem] tracking-[0.14rem] uppercase hover:bg-secondary transition-all active:scale-95"
+            className="bg-primary text-black px-3.5 py-2.5 rounded font-headline font-bold text-[0.64rem] tracking-[0.14rem] uppercase hover:bg-secondary transition-all active:scale-95"
           >
             Book Demo
           </Link>
           <button
-            className="material-symbols-outlined flex h-10 w-10 items-center justify-center text-primary hover:text-primary/80 focus:outline-none text-[2.25rem] leading-none"
+            className="material-symbols-outlined flex h-10 w-10 items-center justify-center text-primary hover:text-primary/80 focus:outline-none text-[2.3rem] leading-none"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
           >
