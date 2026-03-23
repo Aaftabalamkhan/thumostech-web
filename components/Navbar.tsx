@@ -24,7 +24,7 @@ export default function Navbar() {
             alt="Thumos Tech"
             width={940}
             height={840}
-            className="h-28 md:h-24 w-auto -my-2"
+            className="h-[6.75rem] md:h-[5.75rem] w-auto -my-2"
             priority
           />
         </Link>
@@ -39,7 +39,7 @@ export default function Navbar() {
           </div>
           <Link
             href="/book-demo"
-            className="mr-3 md:mr-4 bg-primary text-black px-6 py-2 rounded font-headline font-bold text-sm tracking-[0.16rem] uppercase hover:bg-secondary transition-all active:scale-95"
+            className="mr-3 md:mr-4 bg-primary text-black px-6 py-[0.45rem] rounded font-headline font-bold text-sm tracking-[0.16rem] uppercase hover:bg-secondary transition-all active:scale-95"
           >
             Book Demo
           </Link>
