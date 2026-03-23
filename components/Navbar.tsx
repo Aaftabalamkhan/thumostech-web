@@ -9,10 +9,10 @@ export default function Navbar() {
   const pathname = usePathname();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  const getLinkClass = (path: string) => {
+  const getLinkClass = (path: string, accent = false) => {
     return pathname === path
       ? "text-primary border-b-2 border-primary pb-1 font-manrope font-semibold tracking-tight text-sm"
-      : "text-zinc-400 hover:text-primary transition-colors duration-300 font-manrope font-semibold tracking-tight text-sm";
+      : `${accent ? "text-primary" : "text-zinc-400"} hover:text-primary transition-colors duration-300 font-manrope font-semibold tracking-tight text-sm`;
   };
 
   return (
@@ -22,17 +22,17 @@ export default function Navbar() {
           <Image
             src="/logo.png"
             alt="Thumos Tech"
-            width={480}
-            height={330}
-            className="h-24 w-auto"
+            width={940}
+            height={840}
+            className="h-28 md:h-25 w-auto"
             priority
           />
         </Link>
         <div className="hidden md:flex gap-10 items-center">
-          <Link className={getLinkClass("/solutions")} href="/solutions">
+          <Link className={getLinkClass("/solutions", true)} href="/solutions">
             Solutions
           </Link>
-          <Link className={getLinkClass("/about")} href="/about">
+          <Link className={getLinkClass("/about", true)} href="/about">
             About
           </Link>
         </div>

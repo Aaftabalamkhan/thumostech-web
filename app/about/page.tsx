@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function About() {
   return (
     <div className="pt-32">
@@ -12,12 +14,12 @@ export default function About() {
             <span className="text-primary text-glow">Overlay Protection.</span>
           </h1>
           <p className="text-zinc-400 text-lg max-w-lg leading-relaxed">
-            At Thumos Tech, we don't just secure data; we build the digital fortifications that allow innovation to flourish without fear.
+            At Thumos Tech, we don&apos;t just secure data; we build the digital fortifications that allow innovation to flourish without fear.
           </p>
         </div>
         <div className="w-full md:w-1/2 relative">
           <div className="aspect-square rounded-sm overflow-hidden glass-card p-4 border border-zinc-800 primary-glow-box">
-            <img alt="Server room with amber lighting" className="w-full h-full object-cover rounded-sm opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfOn57PR3tE8H9JSYxDAKDpyJ6GoROFG948PiWurnGt42s_I4DXz7CMMu8nzfNkP9J_jr8ILtYg68vStvK2AuBXgCR-r2o4UGViO6HCLFou-BbseZ8ej00Hx9bF7R8m35XYF-__BStXHbd34b9CT-72DCfap5FUgrAAwynKePRfvA6igpU5E2ztK3dtlT2Ei_jjNarfrklRfGXypJgYiNk0SPGz7PB7JGynCmnkMBSbzSuncmivihy7aPQO6YPlnB3iSKZ4y77ND8" />
+            <Image alt="Server room with amber lighting" className="w-full h-full object-cover rounded-sm opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfOn57PR3tE8H9JSYxDAKDpyJ6GoROFG948PiWurnGt42s_I4DXz7CMMu8nzfNkP9J_jr8ILtYg68vStvK2AuBXgCR-r2o4UGViO6HCLFou-BbseZ8ej00Hx9bF7R8m35XYF-__BStXHbd34b9CT-72DCfap5FUgrAAwynKePRfvA6igpU5E2ztK3dtlT2Ei_jjNarfrklRfGXypJgYiNk0SPGz7PB7JGynCmnkMBSbzSuncmivihy7aPQO6YPlnB3iSKZ4y77ND8" width={900} height={900} sizes="(min-width: 768px) 40vw, 100vw" />
           </div>
           <div className="absolute -bottom-6 -left-6 bg-surface-container-high p-8 rounded-sm shadow-2xl border border-primary/20 hidden md:block">
             <div className="flex items-center gap-4">
@@ -58,7 +60,7 @@ export default function About() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           <div className="group">
             <div className="aspect-[4/5] overflow-hidden rounded-sm mb-6 bg-surface-container-high relative border border-transparent group-hover:border-primary/30 transition-all duration-500">
-              <img alt="Executive male" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZE9Plphjtd89aIAZWbqQmTgeu7Xq4GmTILmGz1MHCL_VtQLW1mUih8-rjbV2OG3bZ16qfLTxGBAih9F5BsydJNwGKByX8mi1Bzdbz7ZHFUD555-Q66JSki8NqdyxGB_9genmJg44WlBtnhKWzD43dR2yUub8w5e2LZXSY0KxObzrTQBdSzllKMUXI3WZhKETbhkXkdeskawRbKFJ3uWo6CGhZmeE94kWi8aak_GMO_rcxxP9KOQAyK4NwipzIKpFKLQ2ESkexXxI" />
+              <Image alt="Executive male" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZE9Plphjtd89aIAZWbqQmTgeu7Xq4GmTILmGz1MHCL_VtQLW1mUih8-rjbV2OG3bZ16qfLTxGBAih9F5BsydJNwGKByX8mi1Bzdbz7ZHFUD555-Q66JSki8NqdyxGB_9genmJg44WlBtnhKWzD43dR2yUub8w5e2LZXSY0KxObzrTQBdSzllKMUXI3WZhKETbhkXkdeskawRbKFJ3uWo6CGhZmeE94kWi8aak_GMO_rcxxP9KOQAyK4NwipzIKpFKLQ2ESkexXxI" width={800} height={1000} sizes="(min-width: 768px) 28vw, 100vw" />
               <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60 group-hover:opacity-40 transition-opacity"></div>
             </div>
             <h4 className="font-headline text-2xl font-bold">Marcus Vane</h4>
@@ -67,7 +69,7 @@ export default function About() {
           </div>
           <div className="group">
             <div className="aspect-[4/5] overflow-hidden rounded-sm mb-6 bg-surface-container-high relative border border-transparent group-hover:border-primary/30 transition-all duration-500">
-              <img alt="Executive female" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAp3u6qc_TMbRNzdqwa9hnNAHjKgItSle0XIiOdJ4p7IAkhjR8pkOxrugXvLoqE-HcyALehVp9m8PuspA-CS2pgsdw6uYEbM2p1SZZ98y2Encyjs5de7ZVQescmH2tc_bQM0JNBH4Yx6Zj6dkwAf-rrQRn6ZN3PN_Ab-7ZekO6ixS7Vu3VnxQCzkPhew6gLtw_9evxx_lP8UuIJVWOTb2OabI_pzbt7RqhDNVhCTmGrnh7_TJaUpYFNaX0GAb8KQKbN_AZ-7AsHUhc" />
+              <Image alt="Executive female" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAp3u6qc_TMbRNzdqwa9hnNAHjKgItSle0XIiOdJ4p7IAkhjR8pkOxrugXvLoqE-HcyALehVp9m8PuspA-CS2pgsdw6uYEbM2p1SZZ98y2Encyjs5de7ZVQescmH2tc_bQM0JNBH4Yx6Zj6dkwAf-rrQRn6ZN3PN_Ab-7ZekO6ixS7Vu3VnxQCzkPhew6gLtw_9evxx_lP8UuIJVWOTb2OabI_pzbt7RqhDNVhCTmGrnh7_TJaUpYFNaX0GAb8KQKbN_AZ-7AsHUhc" width={800} height={1000} sizes="(min-width: 768px) 28vw, 100vw" />
               <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60 group-hover:opacity-40 transition-opacity"></div>
             </div>
             <h4 className="font-headline text-2xl font-bold">Dr. Elena Thorne</h4>
@@ -76,7 +78,7 @@ export default function About() {
           </div>
           <div className="group">
             <div className="aspect-[4/5] overflow-hidden rounded-sm mb-6 bg-surface-container-high relative border border-transparent group-hover:border-primary/30 transition-all duration-500">
-              <img alt="Executive male" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFyJdKDRp6drvnPlBgg31FwK0VBDOVxEPz3tegE2iQgUP4lhdcGJcVMRdnzvs3eYDprNQlEIJZ_tUjWYPKHDOz1ZY_XHDR-TeFh2yEyAz5s1F_Or7-lVp12LAu60rX-9QhNd_hnJMpUtj2LzuKB_8SVDx6hVkcgiRpzNhEyALvjV095BFmOfChAvvlY9qNwvU-ppHVl1nFDt8aOiqu4he0Gr15A2mcoTuaycw3NjsEFpbB6UnpLOBuMWW57bXr-_lETJZ3t__-3Bo" />
+              <Image alt="Executive male" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFyJdKDRp6drvnPlBgg31FwK0VBDOVxEPz3tegE2iQgUP4lhdcGJcVMRdnzvs3eYDprNQlEIJZ_tUjWYPKHDOz1ZY_XHDR-TeFh2yEyAz5s1F_Or7-lVp12LAu60rX-9QhNd_hnJMpUtj2LzuKB_8SVDx6hVkcgiRpzNhEyALvjV095BFmOfChAvvlY9qNwvU-ppHVl1nFDt8aOiqu4he0Gr15A2mcoTuaycw3NjsEFpbB6UnpLOBuMWW57bXr-_lETJZ3t__-3Bo" width={800} height={1000} sizes="(min-width: 768px) 28vw, 100vw" />
               <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60 group-hover:opacity-40 transition-opacity"></div>
             </div>
             <h4 className="font-headline text-2xl font-bold">Julian Cross</h4>
@@ -152,7 +154,7 @@ export default function About() {
               </div>
             </div>
             <div className="h-[400px] w-full bg-zinc-900/50 rounded-sm border border-zinc-800 relative overflow-hidden">
-              <img alt="World map digital connection" className="w-full h-full object-cover opacity-30 grayscale contrast-125" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBX0sMi4inUhA4ZLuYf5Bd3jPzVKOXoxx2ZAmcqmKCiWzxGadSaRUxaMoXSRXzfKiCHfyTrOhMgPbvk7aFWI8H15zim5CxQozqJYmj1iAtFwOeCmEEMiT3s7ewlNqlrx496fSoIncnyqSHu87-64U-MCpxtqBPcGO1u4WPDXpequCO4ouOHxSEsZceq27L78WN7MgeztB8TsIR7rxDEHQX_jTKLspQvfe5aV8TaJppRnJfWw_deyOg1ny4hwH9rRmMl0b6-ki11f5s" />
+              <Image alt="World map digital connection" className="w-full h-full object-cover opacity-30 grayscale contrast-125" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBX0sMi4inUhA4ZLuYf5Bd3jPzVKOXoxx2ZAmcqmKCiWzxGadSaRUxaMoXSRXzfKiCHfyTrOhMgPbvk7aFWI8H15zim5CxQozqJYmj1iAtFwOeCmEEMiT3s7ewlNqlrx496fSoIncnyqSHu87-64U-MCpxtqBPcGO1u4WPDXpequCO4ouOHxSEsZceq27L78WN7MgeztB8TsIR7rxDEHQX_jTKLspQvfe5aV8TaJppRnJfWw_deyOg1ny4hwH9rRmMl0b6-ki11f5s" width={1200} height={800} sizes="(min-width: 768px) 40vw, 100vw" />
               <div className="absolute top-1/4 left-1/3 w-3 h-3 bg-primary rounded-full animate-pulse primary-pulse"></div>
               <div className="absolute top-1/2 left-2/3 w-3 h-3 bg-primary rounded-full animate-pulse primary-pulse"></div>
               <div className="absolute top-1/3 left-3/4 w-3 h-3 bg-primary rounded-full animate-pulse primary-pulse"></div>

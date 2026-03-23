@@ -154,8 +154,10 @@ html {
 }
 
 .animate-ribbon {
-  stroke-dasharray: 200 800;
-  animation: ribbon-pan 40s linear infinite;
+  stroke-dasharray: 260 500;
+  animation: ribbon-pan 13s linear infinite;
+  will-change: stroke-dashoffset;
+  filter: drop-shadow(0 0 14px rgba(232, 84, 42, 0.45));
 }
 
 @layer utilities {
@@ -195,11 +197,11 @@ html {
   }
 
   33% {
-    transform: translate(30px, -30px);
+    transform: translate(82px, -64px) scale(1.08);
   }
 
   66% {
-    transform: translate(-20px, 20px);
+    transform: translate(-58px, 44px) scale(0.92);
   }
 }
 
@@ -207,11 +209,13 @@ html {
 
   0%,
   100% {
-    opacity: 0.05;
+    opacity: 0.12;
+    transform: scale(0.96);
   }
 
   50% {
-    opacity: 0.15;
+    opacity: 0.32;
+    transform: scale(1.14);
   }
 }
 
@@ -226,20 +230,102 @@ html {
 }
 
 .animate-float {
-  animation: float 25s ease-in-out infinite;
+  animation: float 11s ease-in-out infinite;
+  will-change: transform;
 }
 
 .animate-float-delayed {
-  animation: float 35s ease-in-out infinite reverse;
+  animation: float 14s ease-in-out infinite reverse;
+  will-change: transform;
 }
 
 .animate-pulse-slow {
-  animation: pulse-slow 10s ease-in-out infinite;
+  animation: pulse-slow 4.5s ease-in-out infinite;
+  will-change: opacity, transform;
 }
 
 .bg-grid-pattern {
-  background-image: linear-gradient(to right, rgba(232, 84, 42, 0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(232, 84, 42, 0.03) 1px, transparent 1px);
-  background-size: 60px 60px;
-  animation: grid-move 30s linear infinite;
+  background-image: linear-gradient(to right, rgba(232, 84, 42, 0.14) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(242, 122, 80, 0.12) 1px, transparent 1px);
+  background-size: 52px 52px;
+  animation: grid-move 10s linear infinite;
+  will-change: background-position;
+}
+
+.hero-logo-frame {
+  position: relative;
+  isolation: isolate;
+}
+
+.hero-logo-frame::before {
+  content: "";
+  position: absolute;
+  inset: -8% -12%;
+  border-radius: 9999px;
+  background:
+    radial-gradient(circle at center, rgba(232, 84, 42, 0.32) 0%, rgba(242, 122, 80, 0.14) 35%, transparent 72%);
+  filter: blur(26px);
+  opacity: 0.95;
+  z-index: -1;
+}
+
+.hero-logo-frame::after {
+  content: "";
+  position: absolute;
+  inset: 8% -2%;
+  border-radius: 9999px;
+  border: 1px solid rgba(232, 84, 42, 0.16);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(232, 84, 42, 0.03));
+  z-index: -1;
+}
+
+.hero-logo-image {
+  filter: drop-shadow(0 0 28px rgba(232, 84, 42, 0.28)) drop-shadow(0 8px 30px rgba(0, 0, 0, 0.45));
+}
+
+@keyframes hero-reveal {
+  0% {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-reveal {
+  opacity: 0;
+  animation: hero-reveal 0.9s ease-out forwards;
+}
+
+.hero-reveal-delay-1 {
+  animation-delay: 0.12s;
+}
+
+.hero-reveal-delay-2 {
+  animation-delay: 0.24s;
+}
+
+.hero-reveal-delay-3 {
+  animation-delay: 0.36s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-ribbon,
+  .animate-float,
+  .animate-float-delayed,
+  .animate-pulse-slow,
+  .bg-grid-pattern,
+  .status-pulse,
+  .marquee-track,
+  .hero-reveal {
+    animation: none !important;
+  }
+
+  .hero-reveal {
+    opacity: 1;
+    transform: none;
+  }
 }
