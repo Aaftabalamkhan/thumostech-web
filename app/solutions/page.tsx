@@ -15,7 +15,7 @@ export default function Solutions() {
                         Empower your security posture with best in class solutions and services.
                     </p>
                     <div className="flex gap-6">
-                        <button className="bg-primary text-black px-8 py-4 font-headline font-bold flex items-center gap-2 hover:bg-orange-400 transition-all active:scale-95">
+                        <button className="bg-primary text-black px-8 py-4 font-headline font-bold flex items-center gap-2 hover:bg-secondary transition-all active:scale-95">
                             Explore Services
                             <span className="material-symbols-outlined text-lg">arrow_forward</span>
                         </button>
@@ -146,7 +146,7 @@ export default function Solutions() {
                         <h2 className="font-headline text-3xl font-bold text-white mb-2 tracking-tight uppercase">Ready to fortify your network?</h2>
                         <p className="text-zinc-400">Request a comprehensive security blueprint for your organization today.</p>
                     </div>
-                    <button className="bg-primary text-black font-headline font-bold px-10 py-4 hover:bg-orange-400 transition-all active:scale-95 whitespace-nowrap">
+                    <button className="bg-primary text-black font-headline font-bold px-10 py-4 hover:bg-secondary transition-all active:scale-95 whitespace-nowrap">
                         Schedule Consultation
                     </button>
                 </div>

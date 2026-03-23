@@ -1,3 +1,4 @@
+import Image from "next/image";
 import ServicesCarousel from "@/components/ServicesCarousel";
 import CustomersCarousel from "@/components/CustomersCarousel";
 import BookDemoForm from "@/components/BookDemoForm";
@@ -8,8 +9,45 @@ export default function Home() {
       {/* ─── Hero Section ─── */}
       <header className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-black">
         <div className="absolute inset-0 z-0">
-          <div className="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] bg-primary/5 rounded-full blur-[120px]"></div>
-          <div className="absolute bottom-[10%] left-[-5%] w-[400px] h-[400px] bg-secondary/5 rounded-full blur-[100px]"></div>
+          <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
+          
+          {/* Layer: Animated Glows */}
+          <div className="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] bg-primary/10 rounded-full blur-[120px] animate-float opacity-60"></div>
+          <div className="absolute bottom-[10%] left-[-5%] w-[400px] h-[400px] bg-secondary/10 rounded-full blur-[100px] animate-float-delayed opacity-40"></div>
+          <div className="absolute top-[20%] left-[10%] w-[300px] h-[300px] bg-primary/5 rounded-full blur-[80px] animate-pulse-slow"></div>
+
+          {/* Layer: SVG Ribbons */}
+          <div className="absolute inset-0 pointer-events-none overflow-hidden">
+            <svg className="w-full h-full opacity-30" viewBox="0 0 1440 900" preserveAspectRatio="none">
+              <path d="M-100 600 C 200 500 400 700 800 550 S 1200 400 1600 500" stroke="url(#gradient1)" strokeWidth="2" fill="none" className="animate-ribbon" />
+              <path d="M-100 400 C 300 300 600 500 900 350 S 1300 200 1700 300" stroke="url(#gradient2)" strokeWidth="1" fill="none" className="animate-ribbon" style={{ animationDelay: '-15s' }} />
+              <path d="M-100 800 C 400 700 800 900 1200 750 S 1600 600 2000 700" stroke="url(#gradient1)" strokeWidth="1" fill="none" className="animate-ribbon" style={{ animationDelay: '-25s' }} />
+              <defs>
+                <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="transparent" />
+                  <stop offset="50%" stopColor="#E8542A" />
+                  <stop offset="100%" stopColor="transparent" />
+                </linearGradient>
+                <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="transparent" />
+                  <stop offset="50%" stopColor="#F27A50" />
+                  <stop offset="100%" stopColor="transparent" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+
+          {/* Layer: Noise Overlay */}
+          <div className="absolute inset-0 bg-noise pointer-events-none mix-blend-overlay"></div>
+
+          {/* Floating Tech Tags */}
+          <div className="absolute top-1/4 left-1/4 animate-float opacity-20 pointer-events-none hidden md:block">
+            <div className="px-3 py-1 rounded-full border border-primary/30 bg-primary/5 text-[10px] font-bold text-primary tracking-widest uppercase">AI-Driven Threat Detection</div>
+          </div>
+          <div className="absolute bottom-1/3 right-1/4 animate-float-delayed opacity-20 pointer-events-none hidden md:block">
+            <div className="px-3 py-1 rounded-full border border-secondary/30 bg-secondary/5 text-[10px] font-bold text-secondary tracking-widest uppercase">Real-time Response</div>
+          </div>
+          
           <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black"></div>
         </div>
         <div className="max-w-7xl mx-auto px-4 md:px-8 w-full relative z-10">
@@ -20,9 +58,14 @@ export default function Home() {
                 Live System Protection Active
               </span>
             </div>
-            <h1 className="font-headline text-5xl md:text-7xl font-extrabold leading-[1.1] tracking-tight text-on-surface">
-              Thumos <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Tech</span>
-            </h1>
+            <Image
+              src="/logo.png"
+              alt="Thumos Tech"
+              width={500}
+              height={140}
+              className="w-full max-w-sm md:max-w-md mx-auto h-auto drop-shadow-xl"
+              priority
+            />
             <p className="text-on-surface-variant text-lg md:text-xl max-w-xl leading-relaxed">
               Proactive cybersecurity solutions that turn vulnerability into an unbreakable defense strategy for modern enterprises.
             </p>
@@ -69,8 +112,8 @@ export default function Home() {
           <div className="h-px bg-gradient-to-r from-transparent via-zinc-700 to-transparent"></div>
         </div>
         <div className="max-w-7xl mx-auto px-4 md:px-8">
-          <p className="text-center font-label uppercase tracking-[0.2rem] text-[10px] text-zinc-500 mb-10">
-            Trusted by Global Infrastructure Leaders
+          <p className="text-center font-label uppercase tracking-[0.25rem] text-xs font-extrabold text-primary mb-10">
+            Secured Global Enterprises, Our Valued Customers
           </p>
         </div>
         <CustomersCarousel />

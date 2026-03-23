@@ -31,7 +31,7 @@ export default function BookDemoForm() {
           <div className="space-y-4 pt-4">
             <div className="flex items-center gap-3 text-sm text-on-surface/80">
               <span className="material-symbols-outlined text-primary text-lg">schedule</span>
-              30-minute personalized session
+              Personalized sessions
             </div>
             <div className="flex items-center gap-3 text-sm text-on-surface/80">
               <span className="material-symbols-outlined text-primary text-lg">workspace_premium</span>

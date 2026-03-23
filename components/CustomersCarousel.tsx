@@ -1,14 +1,13 @@
 "use client";
 
 const customers = [
-  "QUANTUM_SEC",
-  "NEURAL_CORE",
-  "VORTEX_DATA",
-  "TITAN_SYSTEMS",
-  "APEX_CLOUD",
-  "CIPHER_NET",
-  "NEXUS_GUARD",
-  "IRONCLAD_IO",
+  "HDFC Bank",
+  "ICICI Bank",
+  "Finvu",
+  "IBM",
+  "NSDL",
+  "BSE",
+  "INFLOW",
 ];
 
 export default function CustomersCarousel() {
