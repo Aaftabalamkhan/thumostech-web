@@ -41,8 +41,14 @@ export default function Navbar() {
         </Link>
         <div className="hidden md:flex items-center gap-6">
           <div className="flex gap-10 items-center">
+            <Link className={`${getLinkClass("/services", true)} text-[1.05rem]`} href="/services">
+              Services
+            </Link>
             <Link className={`${getLinkClass("/solutions", true)} text-[1.05rem]`} href="/solutions">
               Solutions
+            </Link>
+            <Link className={`${getLinkClass("/faq", true)} text-[1.05rem]`} href="/faq">
+              FAQ
             </Link>
             <Link className={`${getLinkClass("/about", true)} text-[1.05rem]`} href="/about">
               About
@@ -76,8 +82,14 @@ export default function Navbar() {
       {isMobileMenuOpen && (
         <div className="md:hidden absolute top-full left-0 w-full bg-[#0e0e0e]/95 backdrop-blur-3xl border-b border-primary/20 shadow-2xl z-40">
           <div className="flex flex-col px-4 py-8 space-y-6 items-center">
+            <Link className={getLinkClass("/services")} href="/services" onClick={() => setIsMobileMenuOpen(false)}>
+              Services
+            </Link>
             <Link className={getLinkClass("/solutions")} href="/solutions" onClick={() => setIsMobileMenuOpen(false)}>
               Solutions
+            </Link>
+            <Link className={getLinkClass("/faq")} href="/faq" onClick={() => setIsMobileMenuOpen(false)}>
+              FAQ
             </Link>
             <Link className={getLinkClass("/about")} href="/about" onClick={() => setIsMobileMenuOpen(false)}>
               About

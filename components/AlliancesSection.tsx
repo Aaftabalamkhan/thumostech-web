@@ -206,7 +206,7 @@ function AllianceRotator({ pillar, offset = 0 }: { pillar: AlliancePillar; offse
 
     const interval = window.setInterval(() => {
       setActiveIndex((current) => (current + 1) % pillar.products.length);
-    }, 3600 + offset * 500);
+    }, 6200 + offset * 900);
 
     return () => window.clearInterval(interval);
   }, [isPaused, offset, pillar.products.length]);
@@ -272,9 +272,11 @@ function AllianceRotator({ pillar, offset = 0 }: { pillar: AlliancePillar; offse
   return (
     <article
       ref={cardRef}
-      className="group flex min-h-[360px] overflow-hidden rounded border border-zinc-800/90 bg-surface-container-low shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] transition-all duration-300 hover:border-primary/60 hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.05),0_0_36px_rgba(232,84,42,0.12)] lg:min-h-0 touch-none overscroll-none"
+      className="group flex min-h-[360px] overflow-hidden rounded border border-zinc-800/90 bg-surface-container-low shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] transition-all duration-300 hover:border-primary/60 hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.05),0_0_36px_rgba(232,84,42,0.12)] lg:min-h-0"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
+      onTouchStart={() => setIsPaused(true)}
+      onTouchEnd={() => setIsPaused(false)}
       onFocus={() => setIsPaused(true)}
       onBlur={() => setIsPaused(false)}
       onWheelCapture={handleWheel}
@@ -402,7 +404,10 @@ export default function AlliancesSection() {
             </div>
           </div>
 
-          <div className="overflow-x-auto scrollbar-hidden lg:overflow-visible">
+          <div
+            className="overflow-x-auto scrollbar-hidden lg:overflow-visible"
+            style={{ touchAction: "pan-x", overscrollBehavior: "contain" }}
+          >
             <div className="grid min-w-[900px] grid-cols-1 gap-5 lg:h-[560px] lg:min-w-0 lg:grid-rows-3">
               {alliancePillars.map((pillar, index) => (
                 <AllianceRotator key={pillar.title} pillar={pillar} offset={index} />
