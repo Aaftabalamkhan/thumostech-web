@@ -144,15 +144,37 @@ html {
 }
 
 .marquee-track-customer {
-  animation: marquee-customer 36s linear infinite;
+  display: inline-flex;
+  min-width: max-content;
+  animation: marquee-customer 12s linear infinite;
+}
+
+.marquee-track-customer > * {
+  flex: 0 0 auto;
 }
 
 .marquee-track-customer-fast {
-  animation-duration: 15s;
+  animation-duration: 48s;
 }
 
 .marquee-track:hover {
   animation-play-state: paused;
+}
+
+.marquee-track-customer:hover {
+  animation-play-state: paused;
+}
+
+@keyframes allianceLogoIn {
+  0% {
+    opacity: 0;
+    transform: translateY(8px) scale(0.97);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 @keyframes ribbon-pan {
@@ -195,7 +217,7 @@ html {
   }
 
   100% {
-    transform: translateX(-33.3333%);
+    transform: translateX(-50%);
   }
 }
 
