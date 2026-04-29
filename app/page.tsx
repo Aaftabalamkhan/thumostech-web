@@ -1,7 +1,9 @@
+import Link from "next/link";
 import ServicesCarousel from "@/components/ServicesCarousel";
 import CustomersCarousel from "@/components/CustomersCarousel";
 import BookDemoForm from "@/components/BookDemoForm";
 import AlliancesSection from "@/components/AlliancesSection";
+import FAQAccordion from "@/components/FAQAccordion";
 
 export default function Home() {
   return (
@@ -161,51 +163,30 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ─── Thumos Edge ─── */}
-      <section className="relative py-32">
+      {/* ─── FAQ Preview ─── */}
+      <section id="faq" className="relative py-32">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <div className="max-w-5xl space-y-12">
             <div className="space-y-4">
               <span className="font-label uppercase tracking-[0.2rem] text-xs font-bold text-primary">
-                The Thumos Edge
+                Frequently Asked Questions
               </span>
               <h2 className="font-headline text-4xl md:text-5xl font-extrabold leading-tight">
-                Elite Protection for Modern Enterprises
+                Answers that help you move faster with confidence.
               </h2>
               <p className="text-on-surface-variant text-lg leading-relaxed max-w-3xl">
-                Security is not a product; it&apos;s a constant state of vigilance. Thumos Tech brings a
-                military-grade mindset to corporate digital assets.
+                Explore our most common customer questions and jump to the exact answer on the dedicated FAQ page.
               </p>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-              <div className="space-y-3 p-4 border-l border-primary/30 bg-primary/5">
-                <span className="material-symbols-outlined text-primary text-3xl">verified_user</span>
-                <h4 className="font-headline font-bold text-lg">Verified Protocols</h4>
-                <p className="text-sm text-on-surface-variant">
-                  Every system is audited against global ISO and SOC2 standards.
-                </p>
-              </div>
-              <div className="space-y-3 p-4 border-l border-primary/30">
-                <span className="material-symbols-outlined text-primary text-3xl">speed</span>
-                <h4 className="font-headline font-bold text-lg">Rapid Response</h4>
-                <p className="text-sm text-on-surface-variant">
-                  Incident mitigation within seconds, not minutes or hours.
-                </p>
-              </div>
-              <div className="space-y-3 p-4 border-l border-primary/30">
-                <span className="material-symbols-outlined text-primary text-3xl">visibility</span>
-                <h4 className="font-headline font-bold text-lg">Deep Visibility</h4>
-                <p className="text-sm text-on-surface-variant">
-                  Real-time mapping of every packet and connection in your network.
-                </p>
-              </div>
-              <div className="space-y-3 p-4 border-l border-primary/30 bg-primary/5">
-                <span className="material-symbols-outlined text-primary text-3xl">biotech</span>
-                <h4 className="font-headline font-bold text-lg">Future Proof</h4>
-                <p className="text-sm text-on-surface-variant">
-                  Quantum-resistant encryption layers for long-term data safety.
-                </p>
-              </div>
+            <FAQAccordion />
+            <div className="pt-8">
+              <Link
+                href="/faq"
+                className="inline-flex items-center gap-3 text-primary font-semibold uppercase tracking-[0.18rem] hover:text-secondary"
+              >
+                Read all FAQs
+                <span className="material-symbols-outlined">arrow_forward</span>
+              </Link>
             </div>
           </div>
         </div>
