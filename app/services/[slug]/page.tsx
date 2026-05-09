@@ -31,7 +31,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
   if (!service) notFound();
 
   return (
-    <div className="relative overflow-hidden bg-black py-24">
+    <div className="relative overflow-hidden bg-background py-24">
       <div className="pointer-events-none absolute inset-0 z-0 bg-[radial-gradient(circle_at_top_left,rgba(232,84,42,0.18),transparent_40%)]" />
       <div className="relative z-10 max-w-4xl mx-auto px-4 md:px-8">
         <div className="mb-12 space-y-6">
@@ -46,17 +46,17 @@ export default async function ServicePage({ params }: ServicePageProps) {
           </Link>
           <div className="space-y-4">
             <p className="font-label uppercase tracking-[0.3rem] text-sm font-bold text-primary">{service.title}</p>
-            <h1 className="font-headline text-4xl md:text-5xl font-extrabold text-white">{service.title}</h1>
+            <h1 className="font-headline text-4xl md:text-5xl font-extrabold text-on-surface">{service.title}</h1>
             <p className="text-on-surface-variant text-lg leading-7 max-w-3xl">{service.description}</p>
           </div>
         </div>
 
         <div className="space-y-8">
-          <section className="rounded-[2rem] border border-white/10 bg-surface-container-low p-8 shadow-[0_24px_90px_rgba(0,0,0,0.2)]">
-            <h2 className="font-headline text-2xl font-bold text-white mb-6">Key Focus Areas</h2>
+          <section className="rounded-[2rem] border border-outline-variant/70 bg-surface-container-low p-8 shadow-[0_24px_90px_rgba(0,0,0,0.12)]">
+            <h2 className="font-headline text-2xl font-bold text-on-surface mb-6">Key Focus Areas</h2>
             <div className="grid gap-4 md:grid-cols-2">
               {service.features.map((feature) => (
-                <div key={feature} className="rounded-2xl border border-white/10 bg-black/20 p-6">
+                <div key={feature} className="rounded-2xl border border-outline-variant/70 bg-surface p-6">
                   <div className="flex items-start gap-3">
                     <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center">
                       <svg className="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -64,7 +64,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
                       </svg>
                     </div>
                     <div>
-                      <p className="font-semibold text-white text-lg">{feature}</p>
+                      <p className="font-semibold text-on-surface text-lg">{feature}</p>
                       <p className="text-on-surface-variant text-sm mt-1">
                         Comprehensive {feature.toLowerCase()} services tailored to your organization's specific security requirements and operational context.
                       </p>
@@ -75,8 +75,8 @@ export default async function ServicePage({ params }: ServicePageProps) {
             </div>
           </section>
 
-          <section className="rounded-[2rem] border border-white/10 bg-surface-container-low p-8 shadow-[0_24px_90px_rgba(0,0,0,0.2)]">
-            <h2 className="font-headline text-2xl font-bold text-white mb-6">Why Choose Thumos Tech?</h2>
+          <section className="rounded-[2rem] border border-outline-variant/70 bg-surface-container-low p-8 shadow-[0_24px_90px_rgba(0,0,0,0.12)]">
+            <h2 className="font-headline text-2xl font-bold text-on-surface mb-6">Why Choose Thumos Tech?</h2>
             <div className="space-y-4 text-on-surface-variant leading-7">
               <p>
                 With years of experience in enterprise security, Thumos Tech delivers {service.title.toLowerCase()} that are not just compliant but operationally effective.
@@ -90,7 +90,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
           </section>
 
           <section className="rounded-[2rem] border border-primary/20 bg-primary/5 p-8 text-center">
-            <h2 className="font-headline text-2xl font-bold text-white mb-4">Ready to Get Started?</h2>
+            <h2 className="font-headline text-2xl font-bold text-on-surface mb-4">Ready to Get Started?</h2>
             <p className="text-on-surface-variant mb-6 max-w-2xl mx-auto">
               Contact us today to discuss how our {service.title.toLowerCase()} can strengthen your security posture and support your business objectives.
             </p>

@@ -272,7 +272,7 @@ function AllianceRotator({ pillar, offset = 0 }: { pillar: AlliancePillar; offse
   return (
     <article
       ref={cardRef}
-      className="group flex min-h-[360px] overflow-hidden rounded border border-zinc-800/90 bg-surface-container-low shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] transition-all duration-300 hover:border-primary/60 hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.05),0_0_36px_rgba(232,84,42,0.12)] lg:min-h-0"
+      className="group flex min-h-[360px] overflow-hidden rounded border border-outline-variant/70 bg-surface-container-low shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] transition-all duration-300 hover:border-primary/60 hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.05),0_0_36px_rgba(232,84,42,0.12)] lg:min-h-0"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
       onTouchStart={() => setIsPaused(true)}
@@ -284,7 +284,7 @@ function AllianceRotator({ pillar, offset = 0 }: { pillar: AlliancePillar; offse
       tabIndex={0}
     >
       <div className="flex w-full flex-col lg:flex-row">
-        <div className="border-b border-white/10 bg-black/20 px-6 py-5 lg:flex lg:w-[214px] lg:shrink-0 lg:flex-col lg:justify-between lg:border-b-0 lg:border-r lg:p-5">
+        <div className="border-b border-outline-variant/70 bg-surface px-6 py-5 lg:flex lg:w-[214px] lg:shrink-0 lg:flex-col lg:justify-between lg:border-b-0 lg:border-r lg:p-5">
           <div>
             <h3 className="font-headline text-xl font-extrabold leading-tight text-on-surface lg:text-[1.15rem]">
               {pillar.title}
@@ -324,10 +324,10 @@ function AllianceRotator({ pillar, offset = 0 }: { pillar: AlliancePillar; offse
             </div>
 
             <div className="min-w-0 flex-1">
-              <p className="font-headline text-2xl font-extrabold leading-tight text-on-surface lg:text-[1.28rem] lg:leading-[1.55rem]">
+              <p className="font-headline text-2xl font-extrabold leading-tight text-white lg:text-[1.28rem] lg:leading-[1.55rem]">
                 {activeProduct.line}
               </p>
-              <p className="mt-4 text-sm leading-6 text-white/68 lg:mt-2 lg:max-w-[44rem] lg:text-[0.82rem] lg:leading-[1.25rem]">
+              <p className="mt-4 text-sm leading-6 text-white/82 lg:mt-2 lg:max-w-[44rem] lg:text-[0.82rem] lg:leading-[1.25rem]">
                 {activeProduct.proof}
               </p>
             </div>
@@ -341,7 +341,7 @@ function AllianceRotator({ pillar, offset = 0 }: { pillar: AlliancePillar; offse
                     className={`rounded-full transition-all duration-300 ${
                       index === activeIndex
                         ? "h-2.5 w-9 lg:h-9 lg:w-2.5"
-                        : "h-2.5 w-2.5 bg-white/24 hover:bg-white/55"
+                        : "h-2.5 w-2.5 bg-white/40 hover:bg-white/70"
                     }`}
                     style={index === activeIndex ? { backgroundColor: activeProduct.accent } : undefined}
                     aria-label={`Show ${product.name}`}
@@ -383,19 +383,19 @@ export default function AlliancesSection() {
             </div>
 
             <div className="relative mt-10 grid grid-cols-3 gap-2 lg:grid-cols-1">
-              <div className="border border-white/10 bg-black/30 p-4">
+              <div className="border border-outline-variant/70 bg-surface p-4">
                 <p className="font-headline text-2xl font-extrabold text-primary">14+</p>
                 <p className="mt-2 text-[10px] font-bold uppercase tracking-[0.16rem] text-on-surface/60">
                   Products
                 </p>
               </div>
-              <div className="border border-white/10 bg-black/30 p-4">
+              <div className="border border-outline-variant/70 bg-surface p-4">
                 <p className="font-headline text-2xl font-extrabold text-on-surface">3</p>
                 <p className="mt-2 text-[10px] font-bold uppercase tracking-[0.16rem] text-on-surface/60">
                   Pillars
                 </p>
               </div>
-              <div className="border border-white/10 bg-black/30 p-4">
+              <div className="border border-outline-variant/70 bg-surface p-4">
                 <p className="font-headline text-2xl font-extrabold text-on-surface">24/7</p>
                 <p className="mt-2 text-[10px] font-bold uppercase tracking-[0.16rem] text-on-surface/60">
                   Continuity

@@ -3,13 +3,13 @@ import SocialLinks from "@/components/SocialLinks";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#181818]/57 border-t border-primary/10 backdrop-blur-xl w-full">
+    <footer className="bg-surface-container/65 border-t border-primary/10 backdrop-blur-xl w-full">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 px-4 md:px-8 py-16 max-w-7xl mx-auto w-full">
         <div className="space-y-6">
           <div className="text-lg font-bold text-primary font-headline uppercase tracking-widest">
             Thumos Tech
           </div>
-          <p className="font-body text-sm leading-relaxed text-zinc-400">
+          <p className="font-body text-sm leading-relaxed text-on-surface-variant">
             Defending the digital frontier with unyielding precision. Our mission is to ensure your data remains
             your most secure asset.
           </p>
@@ -22,24 +22,24 @@ export default function Footer() {
           <ul className="space-y-4">
             <li>
               <Link
-                className="font-manrope text-sm tracking-widest uppercase text-zinc-500 hover:text-primary hover:underline underline-offset-4 transition-opacity opacity-80"
-                href="#"
+                className="font-manrope text-sm tracking-widest uppercase text-on-surface-variant hover:text-primary hover:underline underline-offset-4 transition-opacity opacity-80"
+                href="/resources/security-audit"
               >
                 Security Audit
               </Link>
             </li>
             <li>
               <Link
-                className="font-manrope text-sm tracking-widest uppercase text-zinc-500 hover:text-primary hover:underline underline-offset-4 transition-opacity opacity-80"
-                href="#"
+                className="font-manrope text-sm tracking-widest uppercase text-on-surface-variant hover:text-primary hover:underline underline-offset-4 transition-opacity opacity-80"
+                href="/resources/threat-map"
               >
                 Threat Map
               </Link>
             </li>
             <li>
               <Link
-                className="font-manrope text-sm tracking-widest uppercase text-zinc-500 hover:text-primary hover:underline underline-offset-4 transition-opacity opacity-80"
-                href="#"
+                className="font-manrope text-sm tracking-widest uppercase text-on-surface-variant hover:text-primary hover:underline underline-offset-4 transition-opacity opacity-80"
+                href="/resources/documentation"
               >
                 Documentation
               </Link>
@@ -53,24 +53,24 @@ export default function Footer() {
           <ul className="space-y-4">
             <li>
               <Link
-                className="font-manrope text-sm tracking-widest uppercase text-zinc-500 hover:text-primary hover:underline underline-offset-4 transition-opacity opacity-80"
-                href="#"
+                className="font-manrope text-sm tracking-widest uppercase text-on-surface-variant hover:text-primary hover:underline underline-offset-4 transition-opacity opacity-80"
+                href="/legal/privacy-policy"
               >
                 Privacy Policy
               </Link>
             </li>
             <li>
               <Link
-                className="font-manrope text-sm tracking-widest uppercase text-zinc-500 hover:text-primary hover:underline underline-offset-4 transition-opacity opacity-80"
-                href="#"
+                className="font-manrope text-sm tracking-widest uppercase text-on-surface-variant hover:text-primary hover:underline underline-offset-4 transition-opacity opacity-80"
+                href="/legal/terms-of-service"
               >
                 Terms of Service
               </Link>
             </li>
             <li>
               <Link
-                className="font-manrope text-sm tracking-widest uppercase text-zinc-500 hover:text-primary hover:underline underline-offset-4 transition-opacity opacity-80"
-                href="#"
+                className="font-manrope text-sm tracking-widest uppercase text-on-surface-variant hover:text-primary hover:underline underline-offset-4 transition-opacity opacity-80"
+                href="/legal/compliance"
               >
                 Compliance
               </Link>
@@ -79,7 +79,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="max-w-7xl mx-auto py-8 border-t border-primary/10 flex flex-col md:flex-row justify-between items-center gap-4 px-4 md:px-8 text-center md:text-left">
-        <p className="font-manrope text-sm tracking-widest uppercase text-zinc-500">
+        <p className="font-manrope text-sm tracking-widest uppercase text-on-surface-variant">
           Copyright 2026 Thumos Tech.
         </p>
         <div className="flex gap-8">

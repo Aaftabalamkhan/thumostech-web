@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Manrope, Inter } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import BackToTopButton from "@/components/BackToTopButton";
+import ThemeInitializer from "@/components/ThemeInitializer";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
@@ -33,7 +35,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${manrope.variable} ${inter.variable} dark antialiased`}>
+    <html lang="en" className={`${manrope.variable} ${inter.variable} antialiased`} suppressHydrationWarning>
       <head>
         {/* eslint-disable-next-line @next/next/no-page-custom-font */}
         <link
@@ -41,10 +43,15 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="bg-background text-on-background font-body selection:bg-primary selection:text-on-primary min-h-screen flex flex-col">
+      <body
+        suppressHydrationWarning
+        className="bg-background text-on-background font-body selection:bg-primary selection:text-on-primary min-h-screen flex flex-col"
+      >
+        <ThemeInitializer />
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />
+        <BackToTopButton />
         <Analytics />
       </body>
     </html>

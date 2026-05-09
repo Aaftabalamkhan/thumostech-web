@@ -7,7 +7,7 @@ export const metadata: Metadata = {
 
 export default function BookDemoPage() {
   return (
-    <div className="pt-32 bg-black min-h-screen">
+    <div className="pt-32 bg-background min-h-screen">
       <section className="py-12 md:py-20">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <div className="max-w-3xl mb-14 space-y-5">

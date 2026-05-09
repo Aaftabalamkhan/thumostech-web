@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import ThemeToggle from "@/components/ThemeToggle";
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -23,24 +24,40 @@ export default function Navbar() {
   const getLinkClass = (path: string, accent = false) => {
     return pathname === path
       ? "text-primary border-b-2 border-primary pb-1 font-manrope font-semibold tracking-tight text-sm"
-      : `${accent ? "text-primary" : "text-zinc-400"} hover:text-primary transition-colors duration-300 font-manrope font-semibold tracking-tight text-sm`;
+      : `${accent ? "text-primary" : "text-on-surface-variant"} hover:text-primary transition-colors duration-300 font-manrope font-semibold tracking-tight text-sm`;
   };
 
   return (
-    <nav className="fixed top-0 w-full z-50 bg-[#181818]/57 backdrop-blur-xl">
-      <div className="flex justify-between items-center pl-0 pr-2 md:px-10 py-0 max-w-7xl mx-auto w-full min-h-[2.05rem] md:min-h-[2.35rem] relative">
-        <Link href="/" onClick={handleLogoClick} className="-ml-7 md:-ml-2 flex shrink-0 items-center overflow-visible">
+    <nav className="fixed top-0 w-full z-50 bg-surface-container/65 backdrop-blur-xl">
+      <div className="flex justify-between items-center pl-0 pr-2 md:px-10 py-0 max-w-7xl mx-auto w-full min-h-[3.35rem] md:min-h-[4rem] relative">
+        <Link href="/" onClick={handleLogoClick} className="ml-0 md:ml-0 flex shrink-0 items-center overflow-visible">
           <Image
             src="/logo.png"
             alt="Thumos Tech"
             width={940}
             height={840}
-            className="h-[9.1rem] md:h-[8.7rem] w-auto min-w-[11.6rem] md:min-w-[15.5rem] -my-6 md:-my-6"
+            className="navbar-logo logo-light-mode"
+            unoptimized
+            priority
+          />
+          <Image
+            src="/logo-light.webp"
+            alt="Thumos Tech"
+            width={940}
+            height={840}
+            className="navbar-logo logo-dark-mode navbar-logo-dark-adjust"
+            unoptimized
             priority
           />
         </Link>
         <div className="hidden md:flex items-center gap-6">
           <div className="flex gap-10 items-center">
+            <Link className={`${getLinkClass("/", true)} text-[1.05rem]`} href="/">
+              Home
+            </Link>
+            <Link className={`${getLinkClass("/about", true)} text-[1.05rem]`} href="/about">
+              About Us
+            </Link>
             <Link className={`${getLinkClass("/services", true)} text-[1.05rem]`} href="/services">
               Services
             </Link>
@@ -48,20 +65,21 @@ export default function Navbar() {
               Solutions
             </Link>
             <Link className={`${getLinkClass("/faq", true)} text-[1.05rem]`} href="/faq">
-              FAQ
-            </Link>
-            <Link className={`${getLinkClass("/about", true)} text-[1.05rem]`} href="/about">
-              About
+              FAQs
             </Link>
           </div>
-          <Link
-            href="/book-demo"
-            className="mr-2 md:mr-3 bg-primary text-black px-6 py-[0.45rem] rounded font-headline font-bold text-sm tracking-[0.16rem] uppercase hover:bg-secondary transition-all active:scale-95"
-          >
-            Book Demo
-          </Link>
+          <div className="flex items-center gap-3">
+            <ThemeToggle />
+            <Link
+              href="/book-demo"
+              className="mr-2 md:mr-3 bg-primary text-black px-6 py-[0.45rem] rounded font-headline font-bold text-sm tracking-[0.16rem] uppercase hover:bg-secondary transition-all active:scale-95"
+            >
+              Book Demo
+            </Link>
+          </div>
         </div>
         <div className="md:hidden mr-1 flex items-center gap-1.5">
+          <ThemeToggle />
           <Link
             href="/book-demo"
             className="bg-primary text-black px-3.5 py-2.5 rounded font-headline font-bold text-[0.64rem] tracking-[0.14rem] uppercase hover:bg-secondary transition-all active:scale-95"
@@ -80,8 +98,14 @@ export default function Navbar() {
       </div>
       {/* Mobile Menu Dropdown */}
       {isMobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 w-full bg-[#0e0e0e]/95 backdrop-blur-3xl border-b border-primary/20 shadow-2xl z-40">
+        <div className="md:hidden absolute top-full left-0 w-full bg-surface-container/95 backdrop-blur-3xl border-b border-primary/20 shadow-2xl z-40">
           <div className="flex flex-col px-4 py-8 space-y-6 items-center">
+            <Link className={getLinkClass("/")} href="/" onClick={() => setIsMobileMenuOpen(false)}>
+              Home
+            </Link>
+            <Link className={getLinkClass("/about")} href="/about" onClick={() => setIsMobileMenuOpen(false)}>
+              About Us
+            </Link>
             <Link className={getLinkClass("/services")} href="/services" onClick={() => setIsMobileMenuOpen(false)}>
               Services
             </Link>
@@ -89,10 +113,7 @@ export default function Navbar() {
               Solutions
             </Link>
             <Link className={getLinkClass("/faq")} href="/faq" onClick={() => setIsMobileMenuOpen(false)}>
-              FAQ
-            </Link>
-            <Link className={getLinkClass("/about")} href="/about" onClick={() => setIsMobileMenuOpen(false)}>
-              About
+              FAQs
             </Link>
           </div>
         </div>

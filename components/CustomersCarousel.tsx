@@ -200,8 +200,8 @@ export default function CustomersCarousel() {
 
   return (
     <div className="relative overflow-hidden">
-      <div className="pointer-events-none absolute bottom-0 left-0 top-0 z-10 w-24 bg-gradient-to-r from-black to-transparent" />
-      <div className="pointer-events-none absolute bottom-0 right-0 top-0 z-10 w-24 bg-gradient-to-l from-black to-transparent" />
+      <div className="pointer-events-none absolute bottom-0 left-0 top-0 z-10 w-24 bg-gradient-to-r from-background to-transparent" />
+      <div className="pointer-events-none absolute bottom-0 right-0 top-0 z-10 w-24 bg-gradient-to-l from-background to-transparent" />
 
       <div className="marquee-track-customer marquee-track-customer-fast inline-flex">
         {marqueeCustomers.map((customer, i) => (

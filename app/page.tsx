@@ -7,7 +7,7 @@ import FAQAccordion from "@/components/FAQAccordion";
 
 export default function Home() {
   return (
-    <div className="relative overflow-hidden bg-black">
+    <div className="relative overflow-hidden bg-background">
       <div className="pointer-events-none absolute inset-0 z-0">
         <div className="absolute inset-0 bg-grid-pattern opacity-100"></div>
         <div className="absolute top-[-6%] right-[-4%] w-[760px] h-[760px] bg-primary/38 rounded-full blur-[120px] animate-float opacity-100 mix-blend-screen"></div>
@@ -51,13 +51,13 @@ export default function Home() {
           </svg>
         </div>
         <div className="absolute inset-0 bg-noise mix-blend-overlay"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-black/28 via-black/4 to-black/34"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-background/28 via-transparent to-background/24"></div>
       </div>
       <div className="relative z-10">
       {/* ─── Hero Section ─── */}
       <header className="relative min-h-screen flex items-center pt-12 md:pt-28 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/20 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-background/75 via-background/20 to-transparent"></div>
           <div className="absolute inset-x-[14%] top-[18%] h-48 bg-gradient-to-r from-transparent via-white/4 to-transparent blur-3xl"></div>
 
           {/* Floating Tech Tags */}
@@ -68,15 +68,15 @@ export default function Home() {
             <div className="px-3 py-1.5 md:px-4 md:py-2 rounded-full border border-secondary/55 bg-secondary/18 text-[9px] md:text-[10px] font-bold text-secondary tracking-[0.22em] uppercase shadow-[0_0_36px_rgba(242,122,80,0.28)] backdrop-blur-sm">Security That Scales</div>
           </div>
           <div className="absolute left-[5%] top-[47%] animate-float opacity-100 pointer-events-none md:left-[7%] md:top-[46%]">
-            <div className="px-3 py-1.5 md:px-4 md:py-2 rounded-full border border-primary/45 bg-black/35 text-[9px] md:text-[10px] font-bold text-primary tracking-[0.2em] uppercase shadow-[0_0_30px_rgba(232,84,42,0.24)] backdrop-blur-sm">24/7 Threat Readiness</div>
+            <div className="px-3 py-1.5 md:px-4 md:py-2 rounded-full border border-primary/45 bg-surface/35 text-[9px] md:text-[10px] font-bold text-primary tracking-[0.2em] uppercase shadow-[0_0_30px_rgba(232,84,42,0.24)] backdrop-blur-sm">24/7 Threat Readiness</div>
           </div>
           <div className="absolute right-[18%] top-[22%] animate-float opacity-100 pointer-events-none hidden lg:block">
-            <div className="px-4 py-2 rounded-full border border-primary/45 bg-black/30 text-[10px] font-bold text-primary tracking-widest uppercase shadow-[0_0_30px_rgba(232,84,42,0.24)] backdrop-blur-sm">Next-Gen Security Stack</div>
+            <div className="px-4 py-2 rounded-full border border-primary/45 bg-surface/30 text-[10px] font-bold text-primary tracking-widest uppercase shadow-[0_0_30px_rgba(232,84,42,0.24)] backdrop-blur-sm">Next-Gen Security Stack</div>
           </div>
 
-          <div className="absolute inset-0 bg-gradient-to-b from-black/18 via-transparent to-black/8"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-background/18 via-transparent to-background/8"></div>
           <div className="absolute inset-x-[-8%] bottom-[-10rem] h-72 bg-[radial-gradient(ellipse_at_center,rgba(232,84,42,0.12),rgba(0,0,0,0.04)_42%,transparent_76%)] blur-3xl"></div>
-          <div className="absolute inset-x-0 bottom-[-7rem] h-64 bg-gradient-to-b from-transparent via-black/10 to-black/20 blur-[90px]"></div>
+          <div className="absolute inset-x-0 bottom-[-7rem] h-64 bg-gradient-to-b from-transparent via-background/10 to-background/20 blur-[90px]"></div>
         </div>
         <div className="max-w-7xl mx-auto px-4 md:px-8 w-full relative z-10">
           <div className="flex flex-col items-center text-center max-w-4xl mx-auto space-y-8">
@@ -115,7 +115,7 @@ export default function Home() {
       {/* ─── Services Carousel ─── */}
       <section id="services" className="scroll-mt-20 relative mt-16 pt-8 pb-32 md:mt-24 md:pt-12 md:scroll-mt-24">
         <div className="pointer-events-none absolute inset-x-[-10%] top-[-7rem] h-72 bg-[radial-gradient(ellipse_at_center,rgba(232,84,42,0.1),rgba(0,0,0,0.06)_46%,transparent_78%)] blur-3xl"></div>
-        <div className="pointer-events-none absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-black/10 via-black/6 to-transparent"></div>
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-background/10 via-background/6 to-transparent"></div>
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <div className="mb-20 space-y-4">
             <span className="font-label uppercase tracking-[0.2rem] text-xs font-bold text-primary">
@@ -159,7 +159,7 @@ export default function Home() {
 
       <section id="book-demo" className="relative py-32">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
-          <BookDemoForm className="bg-zinc-900/90" />
+          <BookDemoForm className="bg-surface-container-low" />
         </div>
       </section>
 
